@@ -54,10 +54,14 @@ const getProfile = () => {
 
 export const RegisterProfile = (data: any) => {
   return async (dispatch: any) => {
-      axios.post(`${API_URL}/accounts/register/`, data)
+      axios.post(`${API_URL}/accounts/register/`, data, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
       .then((response) => {
         alert('Вы успешно зарегистрировались')
-          window.location.replace('/')
+          window.location.replace('/login')
       })
       .catch((error) => {
           dispatch(setError(error.response.data));
@@ -69,7 +73,19 @@ export const LoginProfile = (data: any) => {
   return async (dispatch: any) => {
       axios.post(`${API_URL}/accounts/login/`, data)
       .then((response) => {
-        localStorage.setItem('profile', JSON.stringify(response.data))
+        
+        axios.get(`${API_URL}/accounts/profile/`,{
+          headers: {
+            Authorization: `Token ${response.data.token}`
+          }
+        })
+          .then((response) => {
+            localStorage.setItem('profile', JSON.stringify(response.data))
+            window.location.replace('/mainlayout/teams')
+          })
+          .catch((error) => {
+              dispatch(setError(error.response.data));
+          })
       })
       .catch((error) => {
           dispatch(setError(error.response.data));

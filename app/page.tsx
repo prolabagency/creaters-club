@@ -10,11 +10,11 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
+    <div className="landing">
       <Header />
       <motion.div className="main">
         <div className="container">
-          <div className="main_inner" style={{ marginTop: "100px" }}>
+          <div className="main_inner" style={{ paddingTop: "100px" }}>
             <div className="main_left">
               <div className="main_title">WELCOME</div>
               <div className="main_text">to the WEC hackathon</div>

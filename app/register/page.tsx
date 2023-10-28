@@ -7,6 +7,7 @@ import { RegisterProfile } from "../../redux/slices/profile";
 import Select from "react-select";
 import { getCities } from "../../redux/slices/cities";
 import Link from "next/link";
+import Image from "next/image";
 
 const Register = () => {
   const {
@@ -15,15 +16,16 @@ const Register = () => {
     formState: { errors },
   } = useForm<any>();
   const dispatch = useDispatch<any>();
-  const { profile, cities } = useSelector((state: any) => state);
+  const { profile } = useSelector((state: any) => state);
 
-  const [city, setCity] = useState<any>();
+  const [avatar, setAvatar] = useState<any>();
+  const [avatarShow, setAvatarShow] = useState<any>();
 
   const onSubmit = (data: any) => {
     dispatch(
       RegisterProfile({
         ...data,
-        city: city,
+        photo: avatar ? avatar : null,
       })
     );
   };
@@ -32,6 +34,11 @@ const Register = () => {
     dispatch(getCities());
   }, []);
 
+  const Avatar = (e: any) => {
+    setAvatar(e.target.files[0])
+    setAvatarShow(URL.createObjectURL(e.target.files[0]))
+  }
+
   return (
     <div className="register">
       <div className="register_inner">
@@ -39,6 +46,24 @@ const Register = () => {
           <div>
             <div className="register_item_title">Регистерация</div>
             <div className="register_inputs">
+                <div className="register_item" style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '40px',
+                  paddingBottom: '20px',
+                  justifyContent: 'center',
+                  flexWrap: 'wrap'
+                }}>
+                  <div>
+                    <Image width={150} height={150} style={{
+                    border: '1px solid red',
+                    borderRadius: '100px',
+                    objectFit: 'cover'
+                  }} src={avatarShow} alt="" />
+                  </div>
+                  <label htmlFor="avatar" className="redButton">Выбрать фото</label>
+                  <input onChange={(e) => Avatar(e)} id='avatar' type="file" hidden/>
+                </div>
               <div>
                 <div className="register_item">
                   <label htmlFor="">Пользователь</label>
@@ -115,7 +140,7 @@ const Register = () => {
                 </div>
               </div>
               <div>
-                <div className="register_item">
+                {/* <div className="register_item">
                   <label htmlFor="">Город</label>
                   <Select
                     onChange={(e: any) => setCity(e?.target?.value)}
@@ -129,17 +154,8 @@ const Register = () => {
                     {errors.city && "Это поле не может быть пустым."}
                   </div>
                   <div className="error">{profile?.error?.city}</div>
-                </div>
-                <div className="register_item">
-                  <label htmlFor="">Адрес</label>
-                  <input
-                    {...register("adress", { required: true })}
-                    type="text"
-                  />
-                  <div className="error">
-                    {errors.adress && "Это поле не может быть пустым."}
-                  </div>
-                </div>
+                </div> */}
+               
               </div>
               <div className="register_item">
                 <label htmlFor="">Телефон</label>
@@ -156,7 +172,7 @@ const Register = () => {
               Регистрировать
             </button>
           </div>
-          <Link href="/login" style={{ textAlign: "end", color: "white" }}>
+          <Link href="/login" style={{ textAlign: "end" }}>
            Уже есть акаунт
           </Link>
         </div>

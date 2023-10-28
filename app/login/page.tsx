@@ -58,7 +58,7 @@ const Login = () => {
             <button onClick={handleSubmit(onSubmit)} type="submit">
               Войти
             </button>
-            <Link href="/register" style={{color: 'white'}}>Регистерация</Link>
+            <Link href="/register">Регистерация</Link>
           </div>
         </div>
       </div>
