@@ -3,11 +3,13 @@
 import Image from "next/image";
 import React from "react";
 import { useState, useEffect } from "react";
-import NoProfile from '../../../images/no-profile.jpeg'
+import NoProfile from "../../../images/no-profile.jpeg";
+import { useDispatch } from "react-redux";
+import { EditProfile } from "@/redux/slices/profile";
 
 const Profile = () => {
   const [profile, setProfile] = useState<any>(null);
-
+  const dispatch = useDispatch<any>();
   useEffect(() => {
     const profileData: any = localStorage.getItem("profile");
     if (profileData) {
@@ -21,17 +23,15 @@ const Profile = () => {
     window.location.replace("/");
   };
 
-  const Save = () => {
-
-  }
-
-  const [avatar, setAvatar] = useState<any>();
-  const [avatarShow, setAvatarShow] = useState<any>();
+  const Save = () => {};
 
   const SaveAvatar = (e: any) => {
-    setAvatar(e.target.files[0])
-    setAvatarShow(URL.createObjectURL(e.target.files[0]))
-  }
+    dispatch(
+      EditProfile({
+        photo: e.target.files[0],
+      })
+    );
+  };
 
   return (
     <div className="profile">
@@ -50,9 +50,18 @@ const Profile = () => {
           />
 
           <div>
-          <button style={{
-            width: '100%'
-          }} onClick={Logout}>Edit</button>
+            
+              <input
+                onChange={(e) => SaveAvatar(e)}
+                type="file"
+                id="avatar"
+                hidden
+              />
+              <label htmlFor="avatar">
+                
+              Edit
+             
+            </label>
           </div>
         </div>
         <div>
@@ -76,7 +85,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="profile_logout">
         <button onClick={Save}>Save</button>
         <button onClick={Logout}>Logout</button>

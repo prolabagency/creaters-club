@@ -11,6 +11,9 @@ export default function MainLayoutPage({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  if (!localStorage.getItem("token")) {
+    window.location.replace("/");
+  }
 
   return (
     <>
@@ -19,12 +22,12 @@ export default function MainLayoutPage({
         <div className="admin_left">
           <div className="admin_side_items">
             <Link
-              href={"/mainlayout/teams"}
+              href={"/mainlayout/team"}
               className={`admin_side_item ${
-                pathname === "/mainlayout/teams" ? "active" : null
+                pathname === "/mainlayout/team" ? "active" : null
               }`}
             >
-              Teams
+              Team
             </Link>
             <Link
               href={"/mainlayout/members"}
@@ -35,12 +38,12 @@ export default function MainLayoutPage({
               Members
             </Link>
             <Link
-              href={"/mainlayout/projects"}
+              href={"/mainlayout/project"}
               className={`admin_side_item ${
-                pathname === "/mainlayout/projects" ? "active" : null
+                pathname === "/mainlayout/project" ? "active" : null
               }`}
             >
-              Projects
+              Project
             </Link>
             <Link
               href={"/mainlayout/users"}

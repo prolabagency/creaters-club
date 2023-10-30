@@ -2,24 +2,24 @@ import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { API_URL } from "../../hook";
 
-export interface UsersState {
+export interface TeamsState {
   loading: any;
   error: any;
   data: any;
   oneData: any;
 }
 
-const initialState: UsersState = {
+const initialState: TeamsState = {
   loading: false,
   error: null,
   data: null,
   oneData: null,
 };
 
-const URL = "user";
+const URL = "teams";
 
-export const usersSlice = createSlice({
-  name: "users",
+export const teamsSlice = createSlice({
+  name: "teams",
   initialState,
   reducers: {
     addItem: (state, action) => {
@@ -34,19 +34,16 @@ export const usersSlice = createSlice({
     setData: (state, action) => {
       state.data = action.payload;
     },
-    removeItem: (state, { payload }) => {
-      state.data = state.data.filter((item) => item.id !== payload);
-    },
     setOneData: (state, action) => {
       state.oneData = action.payload;
     },
   },
 });
 
-export const { setLoading, setError, setData, setOneData, addItem , removeItem} = usersSlice.actions;
-export default usersSlice.reducer;
+export const { setLoading, setError, setData, setOneData, addItem } = teamsSlice.actions;
+export default teamsSlice.reducer;
 
-export const getUsers = () => {
+export const getTeams = () => {
   return async (dispatch: any) => {
     dispatch(setLoading(true));
     axios
@@ -56,7 +53,7 @@ export const getUsers = () => {
         },
       })
       .then((response) => {
-        dispatch(setData(response.data.reverse()));
+        dispatch(setData(response.data));
       })
       .catch((error) => {
         dispatch(setError(error));
@@ -67,7 +64,7 @@ export const getUsers = () => {
   };
 };
 
-export const getUser = (id: number) => {
+export const getTeam = (id: number) => {
   return async (dispatch: any) => {
     dispatch(setLoading(true));
     axios
@@ -88,13 +85,11 @@ export const getUser = (id: number) => {
   };
 };
 
-  
-export const addUser = (data: any, After: any) => {
+export const addTeam = (data: any, After: any) => {
   return async (dispatch: any) => {
       axios.post(`${API_URL}/${URL}/`, data, {
         headers: {
-          Authorization: `Token ${localStorage.getItem('token')}`,
-          'Content-Type' : 'multipart/form-data'
+          Authorization: `Token ${localStorage.getItem('token')}`
         }
       })
       .then((response) => {
@@ -107,7 +102,7 @@ export const addUser = (data: any, After: any) => {
   }
 }
 
-export const editUser = (data = {}, id: number) => {
+export const editTeam = (data = {}, id: number) => {
   return async (dispatch: any) => {
     dispatch(setLoading(true));
     axios
@@ -128,7 +123,7 @@ export const editUser = (data = {}, id: number) => {
   };
 };
 
-export const removeUser = (id: number) => {
+export const removeTeam = (id: number) => {
     return async (dispatch: any) => {
       dispatch(setLoading(true));
       axios
@@ -138,7 +133,7 @@ export const removeUser = (id: number) => {
           },
         })
         .then((response) => {
-          dispatch(removeItem(id));
+          dispatch(setData(response.data));
         })
         .catch((error) => {
           dispatch(setError(error));

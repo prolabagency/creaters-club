@@ -73,7 +73,7 @@ export const LoginProfile = (data: any) => {
   return async (dispatch: any) => {
       axios.post(`${API_URL}/accounts/login/`, data)
       .then((response) => {
-        
+        localStorage.setItem('token', response.data.token)
         axios.get(`${API_URL}/accounts/profile/`,{
           headers: {
             Authorization: `Token ${response.data.token}`
@@ -81,11 +81,28 @@ export const LoginProfile = (data: any) => {
         })
           .then((response) => {
             localStorage.setItem('profile', JSON.stringify(response.data))
-            window.location.replace('/mainlayout/teams')
+            window.location.replace('/mainlayout/team')
           })
           .catch((error) => {
               dispatch(setError(error.response.data));
           })
+      })
+      .catch((error) => {
+          dispatch(setError(error.response.data));
+      })
+  }
+}
+
+export const EditProfile = (data: any) => {
+  return async (dispatch: any) => {
+      axios.post(`${API_URL}/accounts/profile/`, data, {
+        headers: {
+          Authorization: `Token ${localStorage.getItem('token')}`,
+          'Content-Type': 'multipart/form-data'
+        }
+      })
+      .then((response) => {
+        localStorage.setItem('profile', JSON.stringify(response.data))
       })
       .catch((error) => {
           dispatch(setError(error.response.data));

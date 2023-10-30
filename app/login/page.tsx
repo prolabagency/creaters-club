@@ -58,7 +58,6 @@ const Login = () => {
             <button onClick={handleSubmit(onSubmit)} type="submit">
               Войти
             </button>
-            <Link href="/register">Регистерация</Link>
           </div>
         </div>
       </div>

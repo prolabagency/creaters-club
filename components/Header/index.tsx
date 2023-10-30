@@ -21,7 +21,6 @@ export const Header: any = () => {
       setProfile(profile);
     }
   }, []);
-console.log(profile);
 
   return (
     <div className="header">
@@ -43,26 +42,29 @@ console.log(profile);
           </div>
           {profile ? null : (
             <Link href="/login" className="header_nav_bar">
-              Login / Register
+              Login
             </Link>
           )}
           {profile && pathname === "/" ? (
-            <Link href="/mainlayout" className="header_nav_bar">
+            <Link href="/mainlayout/team" className="header_nav_bar">
               Панель
             </Link>
           ) : (
-            <Link href="/mainlayout/profile" className="header_nav_bar" style={{
-              display: 'flex',
-              gap: '10px'
-            }}>
-             {
-              profile?.first_name ? <Image width={50} height={50} style={{
-                border: '1px solid red',
-                borderRadius: '100px',
-                objectFit: 'cover'
-              }} src={profile?.photo ? profile?.photo : NoProfile} alt="" /> :null
-             } {profile?.first_name} {profile?.last_name}
-            </Link>
+            <>
+            {
+              profile?.id ? <Link href="/mainlayout/profile" className="header_nav_bar" style={{
+                display: 'flex',
+                gap: '10px'
+              }}>
+               {
+                profile?.id ? <Image width={50} height={50} style={{
+                  border: '1px solid red',
+                  borderRadius: '100px',
+                  objectFit: 'cover'
+                }} src={profile?.photo ? profile?.photo : NoProfile} alt="" /> :null
+               } {profile?.first_name} {profile?.last_name}
+              </Link>: null
+            }</>
           )}
         </div>
       </div>
