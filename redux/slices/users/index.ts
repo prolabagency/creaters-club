@@ -35,7 +35,7 @@ export const usersSlice = createSlice({
       state.data = action.payload;
     },
     removeItem: (state, { payload }) => {
-      state.data = state.data.filter((item) => item.id !== payload);
+      state.data = state.data.filter((item: any) => item.id !== payload);
     },
     setOneData: (state, action) => {
       state.oneData = action.payload;
