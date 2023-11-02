@@ -40,9 +40,13 @@ export const profileSlice = createSlice({
 export const { setLoading, setError, setData, setOneData } = profileSlice.actions
 export default profileSlice.reducer
 
-const getProfile = () => {
+export const getProfile = () => {
     return async (dispatch: any) => {
-        axios.get(`${API_URL}/${URL}/`)
+        axios.get(`${API_URL}/${URL}/`, {
+          headers: {
+            Authorization: `Token ${localStorage.getItem('token')}`
+          }
+        })
         .then((response) => {
             dispatch(setData(response.data));
         })
@@ -81,7 +85,7 @@ export const LoginProfile = (data: any) => {
         })
           .then((response) => {
             localStorage.setItem('profile', JSON.stringify(response.data))
-            window.location.replace('/mainlayout/team')
+            window.location.replace('/team')
           })
           .catch((error) => {
               dispatch(setError(error.response.data));
@@ -95,14 +99,14 @@ export const LoginProfile = (data: any) => {
 
 export const EditProfile = (data: any) => {
   return async (dispatch: any) => {
-      axios.post(`${API_URL}/accounts/profile/`, data, {
+      axios.patch(`${API_URL}/accounts/profile/`, data, {
         headers: {
           Authorization: `Token ${localStorage.getItem('token')}`,
           'Content-Type': 'multipart/form-data'
         }
       })
       .then((response) => {
-        localStorage.setItem('profile', JSON.stringify(response.data))
+        dispatch(setData(response.data));
       })
       .catch((error) => {
           dispatch(setError(error.response.data));

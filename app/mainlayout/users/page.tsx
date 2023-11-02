@@ -88,8 +88,8 @@ const Users = () => {
       </div>
       <div className="users">
         <div className="users_inner">
-          {users?.data?.map((item: any) => (
-            <div className="users_item">
+          {users?.data?.map((item: any, index: number) => (
+            <div className="users_item" key={index}>
               <div className="users_item_item">
                 <Image
                   width={144}

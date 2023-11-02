@@ -13,6 +13,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // if (!localStorage.getItem("token")) {
+  //   window.location.replace("/");
+  // }
   return (
     <html lang="en">
       <Provider store={store}>

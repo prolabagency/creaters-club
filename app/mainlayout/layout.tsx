@@ -11,9 +11,6 @@ export default function MainLayoutPage({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  if (!localStorage.getItem("token")) {
-    window.location.replace("/");
-  }
 
   return (
     <>

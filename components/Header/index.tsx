@@ -7,62 +7,60 @@ import NoProfile from "../../images/no-profile.jpeg";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useDispatch, useSelector } from "react-redux";
+import { getProfile } from "@/redux/slices/profile";
 
 export const Header: any = () => {
-  const [profile, setProfile] = useState<any>(null);
   const pathname = usePathname();
+  const dispatch = useDispatch<any>()
+  const {profile} = useSelector((state: any) => state)
 
   useEffect(() => {
-    const profileData: any = localStorage.getItem("profile");
-    if (profileData === null && pathname !== "/") {
-      window.location.replace("/");
-    } else {
-      const profile = JSON.parse(profileData);
-      setProfile(profile);
-    }
+    dispatch(getProfile())
   }, []);
 
   return (
     <div className="header">
-      <div className="container">
-        <div className="header_inner">
-          <div className="header_logo">
-            <Link href="/">
+      <div className="bg"></div>
+      <div className="container ver">
+        <div className="header_inner" >
+          <div >
+            <Link href="/" className="header_logo">
               {" "}
-              <Image width={75} height={75} src={Logo} alt="" />
+              WEC
             </Link>
           </div>
           <div className="header_nav">
-            <div className="header_nav_bar">Home</div>
-            <div className="header_nav_bar">Projects</div>
-            <div className="header_nav_bar">Contacts</div>
-            <div className="header_nav_bar">Details</div>
+            <Link href='/' className={`header_nav_bar ${pathname === '/' && 'hover'}`}>Home</Link>
+            <Link href='/about' className={`header_nav_bar ${pathname === '/about' && 'hover'}`}>About us</Link>
             <div className="header_nav_bar">Teams</div>
+            <div className="header_nav_bar">Projects</div>
             <div className="header_nav_bar">Partners</div>
+            <div className="header_nav_bar">Contact</div>
           </div>
-          {profile ? null : (
+          {profile?.data ? null : (
             <Link href="/login" className="header_nav_bar">
               Login
             </Link>
           )}
-          {profile && pathname === "/" ? (
-            <Link href="/mainlayout/team" className="header_nav_bar">
+          {profile?.data && pathname === "/" || profile?.data && pathname === "/about"? (
+            <Link href="/team" className="header_nav_bar">
               Панель
             </Link>
           ) : (
             <>
             {
-              profile?.id ? <Link href="/mainlayout/profile" className="header_nav_bar" style={{
+              profile?.data?.id ? <Link href="/profile" className="header_nav_bar" style={{
                 display: 'flex',
                 gap: '10px'
               }}>
                {
-                profile?.id ? <Image width={50} height={50} style={{
+                profile?.data?.id ? <Image width={50} height={50} style={{
                   border: '1px solid red',
                   borderRadius: '100px',
                   objectFit: 'cover'
-                }} src={profile?.photo ? profile?.photo : NoProfile} alt="" /> :null
-               } {profile?.first_name} {profile?.last_name}
+                }} src={profile?.data?.photo ? profile?.data?.photo : NoProfile} alt="" /> :null
+               } {profile?.data?.first_name} {profile?.data?.last_name}
               </Link>: null
             }</>
           )}

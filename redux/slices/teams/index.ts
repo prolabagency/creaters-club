@@ -23,7 +23,7 @@ export const teamsSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      state.data.push(action.payload)
+      state.data.push(action.payload);
     },
     setLoading: (state, action) => {
       state.loading = action.payload;

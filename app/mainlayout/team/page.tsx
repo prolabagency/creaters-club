@@ -132,7 +132,7 @@ console.log(teams);
 
               <div className="team_add_member_list">
                 {teamList.map((item: any, index: number) => (
-                  <div className="team_add_member_item">
+                  <div className="team_add_member_item" key={index}>
                     {index + 1}. {item.name} {item.last_name}{" "}
                     <button onClick={() => resetTeam(item)}>Edit</button>
                     <button onClick={() => removeTeam(item.id)}>remove</button>
