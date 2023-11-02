@@ -5,79 +5,79 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { useEffect } from "react";
-import { addUser, getUsers, removeUser } from "@/redux/slices/users";
+// import { addUser, getUsers, removeUser } from "@/redux/slices/users";
 import Image from "next/image";
 import NoProfile from "../../../images/no-profile.jpeg";
 import { Modal } from "@/components/Modal";
 
 const Users = () => {
-  const dispatch = useDispatch<any>();
-  const { users } = useSelector((state: any) => state);
-  const [modal, setModal] = useState(false);
-  const [avatar, setAvatar] = useState<any>();
-  const [avatarShow, setAvatarShow] = useState<any>();
+  // const dispatch = useDispatch<any>();
+  // const { users } = useSelector((state: any) => state);
+  // const [modal, setModal] = useState(false);
+  // const [avatar, setAvatar] = useState<any>();
+  // const [avatarShow, setAvatarShow] = useState<any>();
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm();
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors },
+  //   reset,
+  // } = useForm();
 
-  useEffect(() => {
-    dispatch(getUsers());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getUsers());
+  // }, []);
 
-  const After = () => {
-    setAvatarShow(null);
-    setAvatar(null);
-    reset({
-      username: "",
-      first_name: "",
-      last_name: "",
-      email: "",
-      stack: "",
-      password: "",
-      password_confirm: "",
-    });
-    setModal(false);
-  };
+  // const After = () => {
+  //   setAvatarShow(null);
+  //   setAvatar(null);
+  //   reset({
+  //     username: "",
+  //     first_name: "",
+  //     last_name: "",
+  //     email: "",
+  //     stack: "",
+  //     password: "",
+  //     password_confirm: "",
+  //   });
+  //   setModal(false);
+  // };
 
-  const Avatar = (e: any) => {
-    setAvatar(e.target.files[0]);
-    setAvatarShow(URL.createObjectURL(e.target.files[0]));
-  };
+  // const Avatar = (e: any) => {
+  //   setAvatar(e.target.files[0]);
+  //   setAvatarShow(URL.createObjectURL(e.target.files[0]));
+  // };
 
-  const userAdd = (data: any) => {
-    dispatch(
-      addUser(
-        {
-          username: data.username,
-          first_name: data.first_name,
-          last_name: data.last_name,
-          email: data.email,
-          stack: data.stack,
-          is_active: true,
-          role: 0,
-          password: data.password,
-          password_confirm: data.password_confirm,
-          photo: avatar,
-        },
-        After
-      )
-    );
-  };
+  // const userAdd = (data: any) => {
+  //   dispatch(
+  //     addUser(
+  //       {
+  //         username: data.username,
+  //         first_name: data.first_name,
+  //         last_name: data.last_name,
+  //         email: data.email,
+  //         stack: data.stack,
+  //         is_active: true,
+  //         role: 0,
+  //         password: data.password,
+  //         password_confirm: data.password_confirm,
+  //         photo: avatar,
+  //       },
+  //       After
+  //     )
+  //   );
+  // };
 
-  const deleteUser = (id: number) => {
-    dispatch(removeUser(id))
-  }
+  // const deleteUser = (id: number) => {
+  //   dispatch(removeUser(id))
+  // }
 
-  console.log(users);
+  // console.log(users);
   
 
   return (
     <>
-      <div className="team">
+      {/* <div className="team">
         <div className="team_header">
           <div></div>
           <button className="team_add" onClick={() => setModal(true)}>
@@ -282,7 +282,7 @@ const Users = () => {
             </div>
           </div>
         }
-      />
+      /> */}
     </>
   );
 };

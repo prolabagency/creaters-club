@@ -6,14 +6,14 @@ export interface CitiesState {
   loading: any;
   error: any;
   data: any;
-  oneData: any;
+  oneData1: any;
 }
 
 const initialState: CitiesState = {
   loading: false,
   error: null,
   data: null,
-  oneData: null,
+  oneData1: null,
 };
 
 const URL = "cities";
@@ -32,7 +32,7 @@ export const citiesSlice = createSlice({
       state.data = action.payload;
     },
     setOneData: (state, action) => {
-      state.oneData = action.payload;
+      state.oneData1 = action.payload;
     },
   },
 });

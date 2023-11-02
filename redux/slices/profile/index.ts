@@ -6,14 +6,14 @@ export interface ProfileState {
   loading: any;
   error: any;
   data: any;
-  oneData: any;
+  oneData2: any;
 }
 
 const initialState: ProfileState = {
   loading: false,
   error: null,
   data: null,
-  oneData: null,
+  oneData2: null,
 };
 
 const URL = 'accounts/profile'
@@ -32,7 +32,7 @@ export const profileSlice = createSlice({
       state.data = action.payload;
     },
     setOneData: (state, action) => {
-      state.oneData = action.payload;
+      state.oneData2 = action.payload;
     },
   },
 });
