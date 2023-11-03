@@ -85,7 +85,7 @@ export const LoginProfile = (data: any) => {
         })
           .then((response) => {
             localStorage.setItem('profile', JSON.stringify(response.data))
-            window.location.replace('/team')
+            window.location.replace('/mainlayout/team')
           })
           .catch((error) => {
               dispatch(setError(error.response.data));

@@ -36,7 +36,6 @@ img {
   align-items: center;
   position: fixed;
   top: 23px;
-  // right: 20px;
   width: 26px;
   height: 26px;
   cursor: pointer;
@@ -103,9 +102,14 @@ img {
   text-decoration: none;
 
   transition-duration: 0.25s;
+
+  &.hover {
+    color: #fff;
+    background-color: #ed1c24;
+  }
 }
 .menu__item:hover {
-  background-color: #cfd8dc;
+  background-color: #ed1c24;
 }
 
 .modal {

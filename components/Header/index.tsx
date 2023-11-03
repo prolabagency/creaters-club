@@ -31,27 +31,36 @@ export const Header: any = () => {
             </Link>
           </div>
           <div className="header_nav">
-            <Link href='/' className={`header_nav_bar ${pathname === '/' && 'hover'}`}>Home</Link>
-            <Link href='/about' className={`header_nav_bar ${pathname === '/about' && 'hover'}`}>About us</Link>
+            <Link
+              href="/"
+              className={`header_nav_bar ${pathname === "/" && "hover"}`}
+            >
+              Home
+            </Link>
+            <Link
+              href="/about"
+              className={`header_nav_bar ${pathname === "/about" && "hover"}`}
+            >
+              About us
+            </Link>
             <div className="header_nav_bar">Teams</div>
             <div className="header_nav_bar">Projects</div>
             <div className="header_nav_bar">Partners</div>
             <div className="header_nav_bar">Contact</div>
           </div>
 
-        
           <div
             style={{
               display: "flex",
               alignItems: "center",
-              gap:'10px'
+              gap: "10px",
             }}
           >
-              {profile?.data ? null : (
-            <Link href="/login" className="header_nav_bar">
-              Login
-            </Link>
-          )}
+            {profile?.data ? null : (
+              <Link href="/login" className="header_nav_bar">
+                Login
+              </Link>
+            )}
             {(profile?.data && pathname === "/") ||
             (profile?.data && pathname === "/about") ? (
               <Link href="/mainlayout/team" className="header_nav_bar">
@@ -97,12 +106,22 @@ export const Header: any = () => {
               </label>
 
               <ul className="menu__box">
-              <Link href='/' className={`menu__item ${pathname === '/' && 'hover'}`}>Home</Link>
-            <Link href='/about' className={`menu__item ${pathname === '/about' && 'hover'}`}>About us</Link>
-            <div className="menu__item">Teams</div>
-            <div className="menu__item">Projects</div>
-            <div className="menu__item">Partners</div>
-            <div className="menu__item">Contact</div>
+                <Link
+                  href="/"
+                  className={`menu__item ${pathname === "/" && "hover"}`}
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/about"
+                  className={`menu__item ${pathname === "/about" && "hover"}`}
+                >
+                  About us
+                </Link>
+                <div className="menu__item">Teams</div>
+                <div className="menu__item">Projects</div>
+                <div className="menu__item">Partners</div>
+                <div className="menu__item">Contact</div>
               </ul>
             </div>
           </div>
