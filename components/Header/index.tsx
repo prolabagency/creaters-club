@@ -12,19 +12,19 @@ import { getProfile } from "@/redux/slices/profile";
 
 export const Header: any = () => {
   const pathname = usePathname();
-  const dispatch = useDispatch<any>()
-  const {profile} = useSelector((state: any) => state)
+  const dispatch = useDispatch<any>();
+  const { profile } = useSelector((state: any) => state);
 
   useEffect(() => {
-    dispatch(getProfile())
+    dispatch(getProfile());
   }, []);
 
   return (
     <div className="header">
       <div className="bg"></div>
       <div className="container ver">
-        <div className="header_inner" >
-          <div >
+        <div className="header_inner">
+          <div>
             <Link href="/" className="header_logo">
               {" "}
               WEC
@@ -38,32 +38,74 @@ export const Header: any = () => {
             <div className="header_nav_bar">Partners</div>
             <div className="header_nav_bar">Contact</div>
           </div>
-          {profile?.data ? null : (
+
+        
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap:'10px'
+            }}
+          >
+              {profile?.data ? null : (
             <Link href="/login" className="header_nav_bar">
               Login
             </Link>
           )}
-          {profile?.data && pathname === "/" || profile?.data && pathname === "/about"? (
-            <Link href="/team" className="header_nav_bar">
-              Панель
-            </Link>
-          ) : (
-            <>
-            {
-              profile?.data?.id ? <Link href="/profile" className="header_nav_bar" style={{
-                display: 'flex',
-                gap: '10px'
-              }}>
-               {
-                profile?.data?.id ? <Image width={50} height={50} style={{
-                  border: '1px solid red',
-                  borderRadius: '100px',
-                  objectFit: 'cover'
-                }} src={profile?.data?.photo ? profile?.data?.photo : NoProfile} alt="" /> :null
-               } {profile?.data?.first_name} {profile?.data?.last_name}
-              </Link>: null
-            }</>
-          )}
+            {(profile?.data && pathname === "/") ||
+            (profile?.data && pathname === "/about") ? (
+              <Link href="/mainlayout/team" className="header_nav_bar">
+                Панель
+              </Link>
+            ) : (
+              <>
+                {profile?.data?.id ? (
+                  <Link
+                    href="/profile"
+                    className="header_nav_bar"
+                    style={{
+                      display: "flex",
+                      gap: "10px",
+                    }}
+                  >
+                    {profile?.data?.id ? (
+                      <Image
+                        width={50}
+                        height={50}
+                        style={{
+                          border: "1px solid red",
+                          borderRadius: "100px",
+                          objectFit: "cover",
+                        }}
+                        src={
+                          profile?.data?.photo
+                            ? profile?.data?.photo
+                            : NoProfile
+                        }
+                        alt=""
+                      />
+                    ) : null}{" "}
+                    {profile?.data?.first_name} {profile?.data?.last_name}
+                  </Link>
+                ) : null}
+              </>
+            )}
+            <div className="hamburger-menu">
+              <input id="menu__toggle" type="checkbox" />
+              <label className="menu__btn" htmlFor="menu__toggle">
+                <span></span>
+              </label>
+
+              <ul className="menu__box">
+              <Link href='/' className={`menu__item ${pathname === '/' && 'hover'}`}>Home</Link>
+            <Link href='/about' className={`menu__item ${pathname === '/about' && 'hover'}`}>About us</Link>
+            <div className="menu__item">Teams</div>
+            <div className="menu__item">Projects</div>
+            <div className="menu__item">Partners</div>
+            <div className="menu__item">Contact</div>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
