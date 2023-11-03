@@ -200,7 +200,6 @@ const Teams = () => {
                         width: "100%",
                         display: "flex",
                         flexDirection: "column",
-                        width: '100%',
                         gap: "5px",
                       }}
                     >
