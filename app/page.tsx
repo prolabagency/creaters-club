@@ -5,9 +5,6 @@ import Man1 from "../images/man1.png";
 import Man2 from "../images/man2.png";
 import Man3 from "../images/man3.png";
 import Man4 from "../images/man4.png";
-
-import { motion } from "framer-motion";
-
 import Image from "next/image";
 import Link from 'next/link'
 
@@ -15,7 +12,7 @@ export default function Home() {
   return (
     <div className="landing">
       <Header />
-      <motion.div className="main">
+      <div className="main">
         <div className="main_inner bg">
           <div className="container">
             <div className="main_left">
@@ -369,7 +366,7 @@ export default function Home() {
               borderBottom: "1px solid #6E6E6E",
             }}
           ></div>
-      </motion.div>
+      </div>
       <div className='main_inner'>
       <div className='container'>
       <div className='mycontact'>Our contats: +996 555 55 55 55</div>
