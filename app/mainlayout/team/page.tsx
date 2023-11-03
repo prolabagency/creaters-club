@@ -5,6 +5,8 @@ import { addTeam, getTeams } from "@/redux/slices/teams";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
+import NoProfile from "../../../images/no-profile.jpeg";
+import Image from "next/image";
 
 const Teams = () => {
   const dispatch = useDispatch<any>();
@@ -38,24 +40,27 @@ const Teams = () => {
     });
   };
   const After = () => {
-    setTeamName('')
-    setTeamList([])
-    Reset()
-    setModal(false)
-  }
+    setTeamName("");
+    setTeamList([]);
+    Reset();
+    setModal(false);
+  };
 
   const TeamAdd = () => {
     dispatch(
-      addTeam({
-        name: teamName,
-        members: teamList.map((item: any) => ({
-          username: item.username,
-          name: item.name,
-          last_name: item.last_name,
-          email: item.email,
-          stack: item.stack,
-        })),
-      }, After)
+      addTeam(
+        {
+          name: teamName,
+          members: teamList.map((item: any) => ({
+            username: item.username,
+            name: item.name,
+            last_name: item.last_name,
+            email: item.email,
+            stack: item.stack,
+          })),
+        },
+        After
+      )
     );
   };
 
@@ -96,20 +101,159 @@ const Teams = () => {
   const removeTeam = (id: number) => {
     setTeamList((prev: any) => prev.filter((item: any) => item.id !== id));
   };
-console.log(teams);
 
   return (
     <>
       <div className="team">
-        <div className="team_header">
-          <div></div>
-          <button className="team_add" onClick={() => setModal(true)}>
-            Add Team +
-          </button>
-        </div>
-        <div className="team_inner">
-          
-        </div>
+        {!teams?.data ? (
+          <div
+            className="team_header"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "calc(100vh - 150px)",
+            }}
+          >
+            {" "}
+            <div
+              className="team_add"
+              style={{
+                width: "100%",
+                cursor: "pointer",
+                maxWidth: "500px",
+                margin: "0 auto",
+                display: "flex",
+                justifyContent: "center",
+                borderRadius: "10px",
+                height: "200px",
+                border: "1px solid #ed1c24",
+                alignItems: "center",
+                fontSize: "28px",
+              }}
+              onClick={() => setModal(true)}
+            >
+              Add Team +
+            </div>
+          </div>
+        ) : (
+          <div
+            className="team_header"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              height: "calc(100vh - 150px)",
+            }}
+          >
+            {" "}
+            <div
+              className="team_add"
+              style={{
+                width: "100%",
+                maxWidth: "100%",
+                margin: "0 auto",
+                borderRadius: "10px",
+                padding: "30px",
+                border: "1px solid #ed1c24",
+                fontSize: "28px",
+              }}
+            >
+              Имя команды:{" "}
+              <span
+                style={{
+                  fontWeight: "600",
+                }}
+              >
+                {" "}
+                {teams?.data[0]?.name}
+              </span>
+              <div className=''>
+              {teams?.data[0]?.members?.map((item: any, index: number) => (
+                <div
+                  className="users_item"
+                  style={{
+                    maxWidth: '100%',
+                    marginTop: "30px",
+                    padding: "0px",
+                  }}
+                  key={index}
+                >
+                  <div
+                    style={{
+                      padding: "30px",
+                      alignItems: "center",
+                      gap: "20px",
+                      width: '100%',
+                      display: "flex",
+                    }}
+                  >
+                    <div className="users_item_item">
+                      <Image
+                        width={144}
+                        height={144}
+                        src={item?.photo ? item?.photo : NoProfile}
+                        alt=""
+                      />
+                    </div>
+                    <div
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                        width: '100%',
+                        gap: "5px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          gap: "5px",
+                        }}
+                        className="users_item_bold"
+                      >
+                        <div
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: 'space-between',
+                            gap: "5px",
+                          }}
+                        >
+                          <div className="users_item_item">
+                            {item.first_name}
+                          </div>
+                          <div className="users_item_item">
+                            {item.last_name}
+                          </div>
+                        </div>
+                        <div
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "5px",
+                          }}
+                        >
+                          <button>remove</button>
+                    <button>edit</button>
+                        </div>
+                      </div>
+                      <div className="users_item_item">Email: {item.email}</div>
+                      <div className="users_item_item">Stack: {item.stack}</div>
+                      <div className="users_item_item">
+                        Status: {item.is_active ? "active" : "disactive"}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div className="team_inner"></div>
       </div>
       <Modal
         width={"600px"}
@@ -146,12 +290,12 @@ console.log(teams);
               )}
 
               <div className="team_add_btns">
-              <button
+                <button
                   onClick={() => {
                     setModal2(false);
                     setModal(false);
                     setEdit(false);
-                    setTeamList([])
+                    setTeamList([]);
                     reset({
                       name: "",
                       username: "",
@@ -213,7 +357,9 @@ console.log(teams);
                     type="text"
                     placeholder="Email"
                   />
-                  <div style={{color: 'red'}}>{errors?.email && `${errors?.email.message}`}</div>
+                  <div style={{ color: "red" }}>
+                    {errors?.email && `${errors?.email.message}`}
+                  </div>
                 </div>
                 <div className="team_add_title">
                   <input

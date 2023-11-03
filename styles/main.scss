@@ -109,6 +109,7 @@ img {
   }
 }
 .menu__item:hover {
+  color: #fff;
   background-color: #ed1c24;
 }
 
@@ -200,6 +201,7 @@ img {
 
   &_nav_bar {
     color: #fff4f4;
+    white-space: nowrap;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -954,7 +956,7 @@ button {
   }
   
 }
-@media (max-width: 860px) {
+@media (max-width: 1000px) {
 .hamburger-menu{
   display: block;
 }

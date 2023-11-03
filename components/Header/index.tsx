@@ -16,7 +16,9 @@ export const Header: any = () => {
   const { profile } = useSelector((state: any) => state);
 
   useEffect(() => {
-    dispatch(getProfile());
+    if (localStorage.getItem("token")) {
+      dispatch(getProfile());
+    }
   }, []);
 
   return (
@@ -70,7 +72,7 @@ export const Header: any = () => {
               <>
                 {profile?.data?.id ? (
                   <Link
-                    href="/profile"
+                    href="/mainlayout/profile"
                     className="header_nav_bar"
                     style={{
                       display: "flex",
