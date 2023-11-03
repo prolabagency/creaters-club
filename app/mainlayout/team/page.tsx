@@ -1,106 +1,106 @@
 "use client";
 
 import { Modal } from "@/components/Modal";
-// import { addTeam, getTeams } from "@/redux/slices/teams";
+import { addTeam, getTeams } from "@/redux/slices/teams";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 
 const Teams = () => {
-//   const dispatch = useDispatch<any>();
-//   const { teams } = useSelector((state: any) => state);
-//   const {
-//     register,
-//     handleSubmit,
-//     formState: { errors },
-//     reset,
-//   } = useForm();
+  const dispatch = useDispatch<any>();
+  const { teams } = useSelector((state: any) => state);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
 
-//   const [modal, setModal] = useState(false);
-//   const [modal2, setModal2] = useState(false);
-//   const [edit, setEdit] = useState(false);
-//   const [teamName, setTeamName] = useState("");
+  const [modal, setModal] = useState(false);
+  const [modal2, setModal2] = useState(false);
+  const [edit, setEdit] = useState(false);
+  const [teamName, setTeamName] = useState("");
 
-//   const [teamList, setTeamList] = useState<any>([]);
+  const [teamList, setTeamList] = useState<any>([]);
 
-//   useEffect(() => {
-//     dispatch(getTeams());
-//   }, []);
+  useEffect(() => {
+    dispatch(getTeams());
+  }, []);
 
-//   const Reset = () => {
-//     reset({
-//       id: "",
-//       name: "",
-//       username: "",
-//       last_name: "",
-//       email: "",
-//       stack: "",
-//     });
-//   };
-//   const After = () => {
-//     setTeamName('')
-//     setTeamList([])
-//     Reset()
-//     setModal(false)
-//   }
+  const Reset = () => {
+    reset({
+      id: "",
+      name: "",
+      username: "",
+      last_name: "",
+      email: "",
+      stack: "",
+    });
+  };
+  const After = () => {
+    setTeamName('')
+    setTeamList([])
+    Reset()
+    setModal(false)
+  }
 
-//   const TeamAdd = () => {
-//     dispatch(
-//       addTeam({
-//         name: teamName,
-//         members: teamList.map((item: any) => ({
-//           username: item.username,
-//           name: item.name,
-//           last_name: item.last_name,
-//           email: item.email,
-//           stack: item.stack,
-//         })),
-//       }, After)
-//     );
-//   };
+  const TeamAdd = () => {
+    dispatch(
+      addTeam({
+        name: teamName,
+        members: teamList.map((item: any) => ({
+          username: item.username,
+          name: item.name,
+          last_name: item.last_name,
+          email: item.email,
+          stack: item.stack,
+        })),
+      }, After)
+    );
+  };
 
-//   const addMember = (data: any) => {
-//     setTeamList((prev: any) => [...prev, { ...data, id: teamList.length + 1 }]);
-//     Reset();
-//     setModal2(false);
-//   };
+  const addMember = (data: any) => {
+    setTeamList((prev: any) => [...prev, { ...data, id: teamList.length + 1 }]);
+    Reset();
+    setModal2(false);
+  };
 
-//   const EditMember = (data: any) => {
-//     setTeamList((prev: any) => {
-//       const updatedTeamList = prev.map((item: any) => {
-//         if (item.id === data.id) {
-//           return data;
-//         }
-//         return item;
-//       });
-//       return updatedTeamList;
-//     });
-//     Reset();
-//     setModal2(false);
-//     setEdit(false);
-//   };
+  const EditMember = (data: any) => {
+    setTeamList((prev: any) => {
+      const updatedTeamList = prev.map((item: any) => {
+        if (item.id === data.id) {
+          return data;
+        }
+        return item;
+      });
+      return updatedTeamList;
+    });
+    Reset();
+    setModal2(false);
+    setEdit(false);
+  };
 
-//   const resetTeam = (data: any) => {
-//     reset({
-//       id: data.id,
-//       name: data.name,
-//       username: data.username,
-//       last_name: data.last_name,
-//       email: data.email,
-//       stack: data.stack,
-//     });
-//     setModal2(true);
-//     setEdit(true);
-//   };
+  const resetTeam = (data: any) => {
+    reset({
+      id: data.id,
+      name: data.name,
+      username: data.username,
+      last_name: data.last_name,
+      email: data.email,
+      stack: data.stack,
+    });
+    setModal2(true);
+    setEdit(true);
+  };
 
-//   const removeTeam = (id: number) => {
-//     setTeamList((prev: any) => prev.filter((item: any) => item.id !== id));
-//   };
-// console.log(teams);
+  const removeTeam = (id: number) => {
+    setTeamList((prev: any) => prev.filter((item: any) => item.id !== id));
+  };
+console.log(teams);
 
   return (
     <>
-      {/* <div className="team">
+      <div className="team">
         <div className="team_header">
           <div></div>
           <button className="team_add" onClick={() => setModal(true)}>
@@ -247,7 +247,7 @@ const Teams = () => {
             </div>
           </div>
         }
-      /> */}
+      />
     </>
   );
 };
