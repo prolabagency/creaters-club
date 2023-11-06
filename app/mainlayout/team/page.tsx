@@ -31,6 +31,8 @@ const Team = () => {
     dispatch(getTeams());
   }, []);
 
+  console.log(teams)
+
   const Reset = () => {
     reset({
       id: "",
@@ -128,7 +130,7 @@ const Team = () => {
   return (
     <>
       <div className="team">
-        {teams?.data ? (
+        {!teams?.data ? (
           <div
             className="team_header"
             style={{
