@@ -18,7 +18,7 @@ const Partners = () => {
           <div className="container">
             <div className="main_left">
               <div className="main_text" style={{ color: "white", textAlign: 'center' }}>
-                Our projects
+                Our partners
               </div>
             </div>
             <div className="main_right">
