@@ -27,69 +27,60 @@ const Projects = () => {
           </div>
         </div>
 
-
-
+        <div style={{
+          display:'flex',
+          justifyContent: 'center',
+          marginTop: '40px',
+        }}>
+          <div 
+          style={{ color: "white",fontWeight: '600', textAlign: 'center',fontSize: '40px' }}>
+            Projects list
+          </div>
+        </div>
         <div className="main_inner">
+         
           <div className="container">
-            <div
-              className="main_left_title"
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                paddingTop: "60px",
-              }}
-            >
-              Our mentors
-            </div>
-            <div
-              className="main_inner"
-              style={{ marginTop: "60px", alignItems: "start" }}
-            >
-              <div className="partner_items">
-                <div className="mentor_item">
-                  <Image src={Man1} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item">
-                  <Image src={Man2} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item">
-                  <Image src={Man3} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item">
-                  <Image src={Man4} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item">
-                  <Image src={Man2} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item">
-                  <Image src={Man3} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <table>
+              <thead>
+              <tr>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Date</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+              </tr>
+              <tr>
+                <td>Centro comercial Moctezuma</td>
+                <td>Francisco Chang</td>
+                <td>Mexico</td>
+              </tr>
+              <tr>
+                <td>Ernst Handel</td>
+                <td>Roland Mendel</td>
+                <td>Austria</td>
+              </tr>
+              <tr>
+                <td>Island Trading</td>
+                <td>Helen Bennett</td>
+                <td>UK</td>
+              </tr>
+              <tr>
+                <td>Laughing Bacchus Winecellars</td>
+                <td>Yoshi Tannamuri</td>
+                <td>Canada</td>
+              </tr>
+              <tr>
+                <td>Magazzini Alimentari Riuniti</td>
+                <td>Giovanni Rovelli</td>
+                <td>Italy</td>
+              </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 

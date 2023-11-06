@@ -39,49 +39,49 @@ const Partners = () => {
                 paddingTop: "60px",
               }}
             >
-              Our mentors
+              Our partners
             </div>
             <div
               className="main_inner"
               style={{ marginTop: "60px", alignItems: "start" }}
             >
               <div className="partner_items">
-                <div className="mentor_item">
+                <div className="mentor_item_second">
                   <Image src={Man1} alt="" />
                   <div className='mentor_person'>
                     <div>Name Surname</div>
                     <div>Experience: 4 years</div>
                   </div>
                 </div>
-                <div className="mentor_item">
+                <div className="mentor_item_second">
                   <Image src={Man2} alt="" />
                   <div className='mentor_person'>
                     <div>Name Surname</div>
                     <div>Experience: 4 years</div>
                   </div>
                 </div>
-                <div className="mentor_item">
+                <div className="mentor_item_second">
                   <Image src={Man3} alt="" />
                   <div className='mentor_person'>
                     <div>Name Surname</div>
                     <div>Experience: 4 years</div>
                   </div>
                 </div>
-                <div className="mentor_item">
+                <div className="mentor_item_second">
                   <Image src={Man4} alt="" />
                   <div className='mentor_person'>
                     <div>Name Surname</div>
                     <div>Experience: 4 years</div>
                   </div>
                 </div>
-                <div className="mentor_item">
+                <div className="mentor_item_second">
                   <Image src={Man2} alt="" />
                   <div className='mentor_person'>
                     <div>Name Surname</div>
                     <div>Experience: 4 years</div>
                   </div>
                 </div>
-                <div className="mentor_item">
+                <div className="mentor_item_second">
                   <Image src={Man3} alt="" />
                   <div className='mentor_person'>
                     <div>Name Surname</div>
@@ -92,6 +92,7 @@ const Partners = () => {
             </div>
           </div>
         </div>
+
 
         <div
           style={{

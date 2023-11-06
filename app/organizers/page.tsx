@@ -39,56 +39,17 @@ const Organizers = () => {
                 paddingTop: "60px",
               }}
             >
-              Our mentors
+              Info about our organization
             </div>
-            <div
-              className="main_inner"
-              style={{ marginTop: "60px", alignItems: "start" }}
-            >
-              <div className="partner_items">
-                <div className="mentor_item">
-                  <Image src={Man1} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item">
-                  <Image src={Man2} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item">
-                  <Image src={Man3} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item">
-                  <Image src={Man4} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item">
-                  <Image src={Man2} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item">
-                  <Image src={Man3} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-              </div>
+            <div className="main_right_img"  style={{
+              padding: '20px',
+              maxWidth: '100%',
+              color: 'white'
+            }}>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </div>
           </div>
         </div>

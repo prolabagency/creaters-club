@@ -7,7 +7,30 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 40px;
+  color: white;
+}
 
+td, th {
+  border: 1px solid white;
+  background-color: #333;
+  text-align: left;
+  padding: 20px;
+}
+th {
+  border: 1px solid white;
+  background-color: #333;
+  text-align: left;
+  padding: 20px;
+}
+
+tr {
+  background-color: white;
+}
 
 img {
   object-fit: cover;
@@ -414,6 +437,16 @@ img {
   height: 256px;
   border-radius: 10px;
   background: #242424;
+
+ 
+}
+.mentor_item_second{
+  width: 100%;
+  max-width: 500px;
+  height: fit-content;
+  border-radius: 10px;
+  background: #242424;
+  display: flex;
 }
 
 .mentor_person {
@@ -983,6 +1016,20 @@ button {
   }
   
 }
+
+@media (max-width: 500px) {
+  .mentor_item_second{
+    display: block;
+    padding: 0px 0px 20px 0px;
+    height: fit-content;
+    border-radius: 10px;
+    background: #242424;
+    width: 100%;
+    max-width: fit-content;
+  }
+  
+}
+
 
 @media (max-width: 440px) {
   .mycontact {
