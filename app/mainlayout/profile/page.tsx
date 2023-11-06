@@ -4,26 +4,32 @@ import Image from "next/image";
 import React from "react";
 import { useState, useEffect } from "react";
 import NoProfile from "../../../images/no-profile.jpeg";
-import { useDispatch } from "react-redux";
-import { EditProfile } from "@/redux/slices/profile";
+import { useDispatch, useSelector } from "react-redux";
+import { EditProfile, getProfile } from "@/redux/slices/profile";
+import { useForm } from "react-hook-form";
 
 const Profile = () => {
-  const [profile, setProfile] = useState<any>(null);
   const dispatch = useDispatch<any>();
+  const {profile} = useSelector((state: any) => state)
   useEffect(() => {
-    const profileData: any = localStorage.getItem("profile");
-    if (profileData) {
-      const profile = JSON.parse(profileData);
-      setProfile(profile);
-    }
+    dispatch(getProfile())
   }, []);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
 
   const Logout = () => {
     localStorage.clear();
     window.location.replace("/");
   };
 
-  const Save = () => {};
+  const Save = (data: any) => {
+    dispatch(EditProfile(data))
+  };
 
   const SaveAvatar = (e: any) => {
     dispatch(
@@ -45,7 +51,7 @@ const Profile = () => {
               borderRadius: "100px",
               objectFit: "cover",
             }}
-            src={profile?.photo ? profile?.photo : NoProfile}
+            src={profile?.data?.photo ? profile?.data?.photo : NoProfile}
             alt=""
           />
 
@@ -67,27 +73,27 @@ const Profile = () => {
         <div>
           <div className="profile_item">
             <div>Name</div>
-            <input type="text" defaultValue={profile?.first_name} />
+            <input {...register('first_name', {required: true})} type="text" defaultValue={profile?.data?.first_name} />
           </div>
           <div className="profile_item">
             <div>Surname</div>
-            <input type="text" defaultValue={profile?.last_name} />
+            <input {...register('last_name', {required: true})} type="text" defaultValue={profile?.data?.last_name} />
           </div>
         </div>
         <div>
           <div className="profile_item">
             <div>Email</div>
-            <input type="text" defaultValue={profile?.email} />
+            <input {...register('email', {required: true})} type="text" defaultValue={profile?.data?.email} />
           </div>
           <div className="profile_item">
             <div>Phone</div>
-            <input type="text" defaultValue={profile?.phone} />
+            <input {...register('phone', {required: true})} type="text" defaultValue={profile?.data?.phone} />
           </div>
         </div>
       </div>
 
       <div className="profile_logout">
-        <button onClick={Save}>Save</button>
+        <button onClick={handleSubmit(Save)}>Save</button>
         <button onClick={Logout}>Logout</button>
       </div>
     </div>

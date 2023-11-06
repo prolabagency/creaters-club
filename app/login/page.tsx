@@ -43,7 +43,7 @@ const Login = () => {
                   <label htmlFor="">Пароль</label>
                   <input
                     {...register("password", { required: true })}
-                    type="text"
+                    type="password"
                   />
                   <div className="error">
                     {errors.password && "Это поле не может быть пустым."}

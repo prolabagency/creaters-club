@@ -11,14 +11,22 @@ export default function MainLayoutPage({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-
   return (
     <>
       <Header />
       <div className="admin">
         <div className="admin_left">
           <div className="admin_side_items">
-            <Link
+            
+            {
+              localStorage.getItem('admin') ? <Link
+              href={"/mainlayout/teams"}
+              className={`admin_side_item ${
+                pathname === "/mainlayout/teams" ? "active" : null
+              }`}
+            >
+              Teams
+            </Link>: <Link
               href={"/mainlayout/team"}
               className={`admin_side_item ${
                 pathname === "/mainlayout/team" ? "active" : null
@@ -26,6 +34,7 @@ export default function MainLayoutPage({
             >
               Team
             </Link>
+            }
             <Link
               href={"/mainlayout/members"}
               className={`admin_side_item ${

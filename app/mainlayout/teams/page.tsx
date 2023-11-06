@@ -1,15 +1,15 @@
 "use client";
 
 import { Modal } from "@/components/Modal";
-import { addTeam, getTeams, editTeamId } from "@/redux/slices/teams";
+import { addTeam, getTeams } from "@/redux/slices/teams";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import NoProfile from "../../../images/no-profile.jpeg";
 import Image from "next/image";
-import { MemberItem } from "./item";
+import { MemberItem } from "../team/item";
 
-const Team = () => {
+const Teams = () => {
   const dispatch = useDispatch<any>();
   const { teams } = useSelector((state: any) => state);
   const {
@@ -22,7 +22,6 @@ const Team = () => {
   const [modal, setModal] = useState(false);
   const [modal2, setModal2] = useState(false);
   const [edit, setEdit] = useState(false);
-  const [editTeam, setEditTeam] = useState(false);
   const [teamName, setTeamName] = useState("");
 
   const [teamList, setTeamList] = useState<any>([]);
@@ -66,25 +65,6 @@ const Team = () => {
     );
   };
 
-  const TeamEdit = () => {
-    dispatch(
-      editTeamId(
-        {
-          name: teamName,
-          members: teamList.map((item: any) => ({
-          username: item.username,
-          name: item.name,
-          last_name: item.last_name,
-          email: item.email,
-          stack: item.stack,
-        })),
-        },
-        teams?.data[0]?.id,
-        After
-      )
-    );
-  };
-
   const addMember = (data: any) => {
     setTeamList((prev: any) => [...prev, { ...data, id: teamList.length + 1 }]);
     Reset();
@@ -122,12 +102,13 @@ const Team = () => {
   const removeTeam = (id: number) => {
     setTeamList((prev: any) => prev.filter((item: any) => item.id !== id));
   };
-  console.log(teams?.data?.message)
-  
+
+  console.log(teams)
+
   return (
     <>
       <div className="team">
-        {teams?.data?.message ? (
+        {!teams?.data ? (
           <div
             className="team_header"
             style={{
@@ -159,12 +140,22 @@ const Team = () => {
             </div>
           </div>
         ) : (
-          <div
-            className="team_header"
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            gap: '20px'
+          }}>
+          {
+            
+            teams?.data?.map((item: any) => <div
+           
+            className="user_item"
             style={{
               display: "flex",
-              justifyContent: "center",
-              height: "calc(100vh - 150px)",
+              justifyContent: 'space-between',
+              width: "100%",
+              maxWidth: "700px",
             }}
           >
             {" "}
@@ -172,58 +163,34 @@ const Team = () => {
               className="team_add"
               style={{
                 width: "100%",
-                maxWidth: "100%",
-                margin: "0 auto",
                 borderRadius: "10px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
                 padding: "30px",
                 border: "1px solid #ed1c24",
                 fontSize: "28px",
               }}
             >
-              <div>
-                Имя команды:{" "}
-                <span
-                  style={{
-                    fontWeight: "600",
-                  }}
-                >
-                  {" "}
-                  {teams?.data && teams?.data[0]?.name}
-                </span>
-                <div className="" style={{
-                  overflowY: 'scroll',
-                  height: '68vh',
-                }}>
-                  {teams?.data && teams?.data[0]?.members?.map((item: any, index: number) => (
-                    <MemberItem item={item} />
-                  ))}
-                </div>
-              </div>
-              <div
+              Имя команды:{" "}
+              <span
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "end",
-                  gap: "5px",
+                  fontWeight: "600",
                 }}
               >
-                <button>Remove team</button>
-                <button
-                  onClick={() => {
-                    setTeamName(teams?.data[0]?.name);
-                    setModal(true);
-                    setTeamList(teams?.data[0]?.members);
-                    setEditTeam(true)
-                  }}
-                >
-                  edit
-                </button>
-              </div>
+                {" "}
+                {item?.name}
+              </span>
+              {item.members.length != 0 ? <div className='' style={{
+                 overflowY: 'scroll',
+                 height: '68vh',
+              }}>
+              {item?.members?.map((item: any, index: number) => (
+                <MemberItem item={item}/>
+              ))}
+              </div>: null}
             </div>
+          </div>)
+          }
           </div>
+          
         )}
 
         <div className="team_inner"></div>
@@ -239,7 +206,6 @@ const Team = () => {
                 <input
                   type="text"
                   placeholder="Team name"
-                  defaultValue={teamName}
                   onChange={(e) => setTeamName(e.target.value)}
                 />
               </div>
@@ -282,7 +248,7 @@ const Team = () => {
                 >
                   Cancel
                 </button>
-                <button onClick={editTeam ? TeamEdit :TeamAdd}>Save</button>
+                <button onClick={TeamAdd}>Add team</button>
               </div>
             </div>
           </div>
@@ -372,4 +338,4 @@ const Team = () => {
   );
 };
 
-export default Team;
+export default Teams;

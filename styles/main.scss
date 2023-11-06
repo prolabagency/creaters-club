@@ -7,6 +7,8 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+
+
 img {
   object-fit: cover;
 }
@@ -255,6 +257,24 @@ img {
       background-size: cover;
       background-attachment: fixed;
       height: 550px;
+    }
+    &.bg4 {
+      background: url(../images/backimg4.png) center no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      height: calc(100vh - 30px);
+    }
+    &.bg5 {
+      background: url(../images/backimg5.png) center no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      height: calc(100vh - 30px);
+    }
+    &.bg6 {
+      background: url(../images/backimg6.png) center no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      height: calc(100vh - 30px);
     }
   }
 

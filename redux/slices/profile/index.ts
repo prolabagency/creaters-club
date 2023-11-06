@@ -84,8 +84,12 @@ export const LoginProfile = (data: any) => {
           }
         })
           .then((response) => {
-            localStorage.setItem('profile', JSON.stringify(response.data))
-            window.location.replace('/mainlayout/team')
+            if(response.data.role === '2' || response.data.role === null){
+              localStorage.setItem('admin', 'true')
+              window.location.replace('/mainlayout/teams')
+            }else{
+              window.location.replace('/mainlayout/team')
+            }
           })
           .catch((error) => {
               dispatch(setError(error.response.data));

@@ -37,10 +37,13 @@ export const teamsSlice = createSlice({
     setOneData: (state, action) => {
       state.oneData3 = action.payload;
     },
+    editData: (state, action) => {
+      state.data[0] = action.payload;
+    },
   },
 });
 
-export const { setLoading, setError, setData, setOneData, addItem } = teamsSlice.actions;
+export const { setLoading, setError, setData, setOneData, addItem,editData } = teamsSlice.actions;
 export default teamsSlice.reducer;
 
 export const getTeams = () => {
@@ -97,12 +100,12 @@ export const addTeam = (data: any, After: any) => {
         After()
       })
       .catch((error) => {
-          dispatch(setError(error.response.data));
+          dispatch(setError(error));
       })
   }
 }
 
-export const editTeam = (data = {}, id: number) => {
+export const editTeamId = (data = {}, id: number, After: any) => {
   return async (dispatch: any) => {
     dispatch(setLoading(true));
     axios
@@ -112,7 +115,8 @@ export const editTeam = (data = {}, id: number) => {
         },
       })
       .then((response) => {
-        dispatch(setData(response.data));
+        dispatch(editData(response.data));
+        After()
       })
       .catch((error) => {
         dispatch(setError(error));

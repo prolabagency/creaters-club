@@ -45,9 +45,24 @@ export const Header: any = () => {
             >
               About us
             </Link>
-            <div className="header_nav_bar">Teams</div>
-            <div className="header_nav_bar">Projects</div>
-            <div className="header_nav_bar">Partners</div>
+            <Link
+              href="/projects"
+              className={`header_nav_bar ${pathname === "/projects" && "hover"}`}
+            >
+             Projects
+            </Link>
+            <Link
+              href="/organizers"
+              className={`header_nav_bar ${pathname === "/organizers" && "hover"}`}
+            >
+             Organizers
+            </Link>
+            <Link
+              href="/partners"
+              className={`header_nav_bar ${pathname === "/partners" && "hover"}`}
+            >
+             Partners
+            </Link>
             <div className="header_nav_bar">Contact</div>
           </div>
 
@@ -64,7 +79,10 @@ export const Header: any = () => {
               </Link>
             )}
             {(profile?.data && pathname === "/") ||
-            (profile?.data && pathname === "/about") ? (
+            (profile?.data && pathname === "/about") ||
+            (profile?.data && pathname === "/projects") ||
+            (profile?.data && pathname === "/organizers") ||
+            (profile?.data && pathname === "/partners") ? (
               <Link href="/mainlayout/team" className="header_nav_bar">
                 Панель
               </Link>
@@ -120,9 +138,24 @@ export const Header: any = () => {
                 >
                   About us
                 </Link>
-                <div className="menu__item">Teams</div>
-                <div className="menu__item">Projects</div>
-                <div className="menu__item">Partners</div>
+                <Link
+                  href="/projects"
+                  className={`menu__item ${pathname === "/projects" && "hover"}`}
+                >
+                  Projects
+                </Link>
+                <Link
+                  href="/organizers"
+                  className={`menu__item ${pathname === "/organizers" && "hover"}`}
+                >
+                  Organizers
+                </Link>
+                <Link
+              href="/partners"
+              className={`menu__item ${pathname === "/partners" && "hover"}`}
+            >
+             Partners
+            </Link>
                 <div className="menu__item">Contact</div>
               </ul>
             </div>
