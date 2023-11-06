@@ -7,10 +7,8 @@ import Link from "next/link";
 
 export default function MainLayoutPage({
   children,
-  active,
 }: {
   children: React.ReactNode;
-  active: boolean; // Assuming "active" should be a boolean
 }) {
   const pathname = usePathname();
   return (
@@ -21,14 +19,16 @@ export default function MainLayoutPage({
           <div className="admin_side_items">
             
             {
-              active ? <Link
+                <Link
               href={"/mainlayout/teams"}
               className={`admin_side_item ${
                 pathname === "/mainlayout/teams" ? "active" : null
               }`}
             >
               Teams
-            </Link>: <Link
+            </Link>
+            
+            } <Link
               href={"/mainlayout/team"}
               className={`admin_side_item ${
                 pathname === "/mainlayout/team" ? "active" : null
@@ -36,7 +36,6 @@ export default function MainLayoutPage({
             >
               Team
             </Link>
-            }
             <Link
               href={"/mainlayout/members"}
               className={`admin_side_item ${

@@ -77,7 +77,7 @@ const Users = () => {
   
 
   return (
-    <MainLayoutPage active={true}>
+    <MainLayoutPage >
       <div className="team">
         <div className="team_header">
           <div></div>
