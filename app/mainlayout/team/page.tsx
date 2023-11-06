@@ -122,12 +122,13 @@ const Team = () => {
   const removeTeam = (id: number) => {
     setTeamList((prev: any) => prev.filter((item: any) => item.id !== id));
   };
-  console.log(teams?.data?.message)
+
+
   
   return (
     <>
       <div className="team">
-        {teams?.data?.message ? (
+        {teams?.data ? (
           <div
             className="team_header"
             style={{
