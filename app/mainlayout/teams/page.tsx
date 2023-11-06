@@ -148,8 +148,8 @@ const Teams = () => {
           }}>
           {
             
-            teams?.data?.map((item: any) => <div
-           
+            teams?.data?.map((item: any, index: number) => <div
+           key={index}
             className="user_item"
             style={{
               display: "flex",
@@ -183,7 +183,7 @@ const Teams = () => {
                  height: '68vh',
               }}>
               {item?.members?.map((item: any, index: number) => (
-                <MemberItem item={item}/>
+                <div key={index}><MemberItem item={item}/></div>
               ))}
               </div>: null}
             </div>

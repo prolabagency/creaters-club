@@ -198,7 +198,7 @@ const Team = () => {
                   height: '68vh',
                 }}>
                   {teams?.data && teams?.data[0]?.members?.map((item: any, index: number) => (
-                    <MemberItem item={item} />
+                    <div key={index}><MemberItem item={item} /></div>
                   ))}
                 </div>
               </div>

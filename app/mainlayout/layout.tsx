@@ -1,5 +1,3 @@
-"use client";
-
 import { Header } from "@/components/Header";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -7,8 +5,10 @@ import Link from "next/link";
 
 export default function MainLayoutPage({
   children,
+  active,
 }: {
   children: React.ReactNode;
+  active: boolean; // Assuming "active" should be a boolean
 }) {
   const pathname = usePathname();
   return (
@@ -19,7 +19,7 @@ export default function MainLayoutPage({
           <div className="admin_side_items">
             
             {
-              localStorage.getItem('admin') ? <Link
+              active ? <Link
               href={"/mainlayout/teams"}
               className={`admin_side_item ${
                 pathname === "/mainlayout/teams" ? "active" : null
@@ -52,9 +52,9 @@ export default function MainLayoutPage({
               Project
             </Link>
             <Link
-              href={"/mainlayout/users"}
+              href={"/users"}
               className={`admin_side_item ${
-                pathname === "/mainlayout/users" ? "active" : null
+                pathname === "/users" ? "active" : null
               }`}
             >
               Users

@@ -7,8 +7,9 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { addUser, getUsers, removeUser } from "@/redux/slices/users";
 import Image from "next/image";
-import NoProfile from "../../../images/no-profile.jpeg";
+import NoProfile from "../../images/no-profile.jpeg";
 import { Modal } from "@/components/Modal";
+import MainLayoutPage from "../mainlayout/layout";
 
 const Users = () => {
   const dispatch = useDispatch<any>();
@@ -76,7 +77,7 @@ const Users = () => {
   
 
   return (
-    <>
+    <MainLayoutPage active={true}>
       <div className="team">
         <div className="team_header">
           <div></div>
@@ -283,7 +284,7 @@ const Users = () => {
           </div>
         }
       />
-    </>
+    </MainLayoutPage>
   );
 };
 
