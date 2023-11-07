@@ -1,12 +1,11 @@
 "use client";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import Man1 from "../images/man1.png";
-import Man2 from "../images/man2.png";
-import Man3 from "../images/man3.png";
-import Man4 from "../images/man4.png";
+
 import Image from "next/image";
 import Link from 'next/link'
+import { Soon } from "@/components/Soon";
+import { Mentors } from "@/components/Mentors";
 
 export default function Home() {
   return (
@@ -94,158 +93,15 @@ export default function Home() {
                     paddingTop: '20px'
                   }}
                 >
+                  
                   <div
-                    className="main_left eventbg"
-                    style={{
-                      width: "100%",
-                      maxWidth: '500px',
-                      padding: "36px 0px 0px 0px",
-                      textAlign: "center",
-                    }}
+                  className='soon'
                   >
-                    <div className="event_title">Name</div>
-                    <div
-                      className="event_both"
-                      style={{
-                        paddingTop: "30px",
-                      }}
-                    >
-                      <div
-                        style={{
-                          width: "50%",
-                          textAlign: "start",
-                        }}
-                      >
-                        Start: Novevber 11
-                      </div>
-                      <div
-                        style={{
-                          width: "50%",
-                          textAlign: "start",
-                        }}
-                      >
-                        Place: adssadsdsa
-                      </div>
-                    </div>
-                    <div
-                      className="event_both"
-                      style={{
-                        paddingTop: "15px",
-                        paddingBottom: "39px",
-                        borderBottom: "1px solid #F3F3F3",
-                      }}
-                    >
-                      End: Novevber 12
-                    </div>
-                    <div
-                      style={{
-                        textAlign: "end",
-                        padding: "14px 26px",
-                      }}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="17"
-                        height="17"
-                        viewBox="0 0 17 17"
-                        fill="none"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M16.4153 8.69124L16.5165 8.74062L16.9549 7.84182L0.876742 0L0.438371 0.898794L15.5381 8.26341L0 15.8418L0.438371 16.7406L16.5165 8.8988L16.4153 8.69124Z"
-                          fill="#FDFDFD"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <div
-                    className="main_right rrr"
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "20px",
-                      width: '100%',
-                    }}
-                  >
-                    <div
-                      className="main_left eventbg"
-                      style={{
-                        width: "100%",
-                        maxWidth: '500px',
-                        padding: "0px",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                    >
-                      <div
-                        className="event_title"
-                        style={{
-                          padding: "31px 26px",
-                          textAlign: "start",
-                          width: "100%",
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "15px",
-                        }}
-                      >
-                        Soon: 5{" "}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="17"
-                          height="17"
-                          viewBox="0 0 17 17"
-                          fill="none"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M16.4153 8.69124L16.5165 8.74062L16.9549 7.84182L0.876742 0L0.438371 0.898794L15.5381 8.26341L0 15.8418L0.438371 16.7406L16.5165 8.8988L16.4153 8.69124Z"
-                            fill="#FDFDFD"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      className="main_left eventbg"
-                      style={{
-                        width: "100%",
-                        maxWidth: '500px',
-                        padding: "0px",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                    >
-                      <div
-                        className="event_title"
-                        style={{
-                          textAlign: "start",
-                          padding: "31px 26px",
-                          width: "100%",
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "15px",
-                        }}
-                      >
-                        Soon: 7{" "}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="17"
-                          height="17"
-                          viewBox="0 0 17 17"
-                          fill="none"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M16.4153 8.69124L16.5165 8.74062L16.9549 7.84182L0.876742 0L0.438371 0.898794L15.5381 8.26341L0 15.8418L0.438371 16.7406L16.5165 8.8988L16.4153 8.69124Z"
-                            fill="#FDFDFD"
-                          />
-                        </svg>
-                      </div>
-                    </div>
+                    <Soon/>
+                    <Soon/>
+                    <Soon/>
+                    <Soon/>
+                    <Soon/>
                   </div>
                 </div>
               </div>
@@ -279,9 +135,6 @@ export default function Home() {
               <div className="partner_items">
                 <div className="partner_item"></div>
                 <div className="partner_item"></div>
-                <div className="partner_item"></div>
-                <div className="partner_item"></div>
-                <div className="partner_item"></div>
               </div>
             </div>
           </div>
@@ -295,69 +148,7 @@ export default function Home() {
             }}
           ></div>
 
-          <div className='main_inner'>
-          <div className="container">
-            <div
-              className="main_left_title"
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                paddingTop: "60px",
-              }}
-            >
-              Our mentors
-            </div>
-            <div
-              className="main_inner"
-              style={{ marginTop: "60px", alignItems: "start" }}
-            >
-              <div className="partner_items">
-                <div className="mentor_item">
-                  <Image src={Man1} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item">
-                  <Image src={Man2} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item">
-                  <Image src={Man3} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item">
-                  <Image src={Man4} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item">
-                  <Image src={Man1} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item">
-                  <Image src={Man3} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
+          <Mentors/>
 
           <div
             style={{

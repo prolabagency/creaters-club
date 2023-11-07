@@ -6,6 +6,19 @@ body {
   }
   font-family: 'Inter', sans-serif;
 }
+.soon{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: start;
+}
+
+.soonitem{
+  width: 500px;
+  cursor: pointer;
+}
+
 
 table {
   font-family: arial, sans-serif;
@@ -998,9 +1011,8 @@ button {
     align-items: center;
     gap: 20px;
   }
-
-  .rrr {
-    align-items: center;
+  .soon{
+    justify-content: center;
   }
 }
 
@@ -1014,6 +1026,10 @@ button {
 @media (max-width: 590px) {
   .mycontact {
     font-size: 26px;
+  }
+  .soonitem{
+    width: 100%;
+    max-width: 500px;
   }
 }
 
@@ -1037,7 +1053,6 @@ button {
   .mycontact {
     font-size: 20px;
   }
-  
 }
 
 @media (max-width: 400px) {
