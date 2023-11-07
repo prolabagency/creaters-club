@@ -86,7 +86,7 @@ export const LoginProfile = (data: any) => {
           .then((response) => {
             if(response.data.role === '2' || response.data.role === null){
               localStorage.setItem('admin', 'true')
-              window.location.replace('/mainlayout/teams')
+              window.location.replace('/adminlayout/teams')
             }else{
               window.location.replace('/mainlayout/team')
             }

@@ -734,6 +734,7 @@ button {
   &_inner {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
   }
 
@@ -1014,7 +1015,6 @@ button {
   .mycontact {
     font-size: 26px;
   }
-  
 }
 
 @media (max-width: 500px) {
@@ -1027,7 +1027,9 @@ button {
     width: 100%;
     max-width: fit-content;
   }
-  
+  .header__info{
+    display: none;
+  }
 }
 
 
@@ -1051,7 +1053,10 @@ button {
   
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
+  .admin_left{
+    display: none;
+  }
 .hamburger-menu{
   display: block;
 }

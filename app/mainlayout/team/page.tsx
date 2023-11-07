@@ -31,7 +31,6 @@ const Team = () => {
     dispatch(getTeams());
   }, []);
 
-  console.log(teams)
 
   const Reset = () => {
     reset({
@@ -130,7 +129,7 @@ const Team = () => {
   return (
     <>
       <div className="team">
-        {!teams?.data ? (
+        {teams?.data?.length === 0 ? (
           <div
             className="team_header"
             style={{

@@ -13,22 +13,11 @@ export default function MainLayoutPage({
   const pathname = usePathname();
   return (
     <>
-      <Header />
+      <Header ver='team'/>
       <div className="admin">
         <div className="admin_left">
           <div className="admin_side_items">
-            
-            {
-                <Link
-              href={"/mainlayout/teams"}
-              className={`admin_side_item ${
-                pathname === "/mainlayout/teams" ? "active" : null
-              }`}
-            >
-              Teams
-            </Link>
-            
-            } <Link
+           <Link
               href={"/mainlayout/team"}
               className={`admin_side_item ${
                 pathname === "/mainlayout/team" ? "active" : null
@@ -52,14 +41,7 @@ export default function MainLayoutPage({
             >
               Project
             </Link>
-            <Link
-              href={"/users"}
-              className={`admin_side_item ${
-                pathname === "/users" ? "active" : null
-              }`}
-            >
-              Users
-            </Link>
+            
             <Link
               href={"/mainlayout/profile"}
               className={`admin_side_item ${

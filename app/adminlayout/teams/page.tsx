@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import NoProfile from "../../../images/no-profile.jpeg";
 import Image from "next/image";
-import { MemberItem } from "../team/item";
+import { MemberItem } from "./item";
 
 const Teams = () => {
   const dispatch = useDispatch<any>();
@@ -105,6 +105,38 @@ const Teams = () => {
 
   console.log(teams)
 
+  const TeamItem = ({ item }: any) => {
+    const [open, setOpen] = useState(false);
+
+    const toggleOpen = () => {
+      setOpen(!open);
+    };
+
+    return (
+      <div className="user_item" style={{ display: "flex", justifyContent: 'space-between', width: "100%", marginBottom: '25px' }}>
+        <div className="team_add" style={{ width: "100%", borderRadius: "10px", padding: "30px", border: "1px solid #ed1c24", fontSize: "28px" }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <div>
+              Имя команды: <span style={{ fontWeight: "600" }}>{item?.name}</span>
+            </div>
+            <div>
+              <button onClick={toggleOpen}>{open ? 'Close' : 'Open'}</button>
+            </div>
+          </div>
+          {item.members.length !== 0 && open && (
+            <div>
+              {item.members.map((member: any, memberIndex: any) => (
+                <div key={memberIndex}>
+                  <MemberItem item={member} />
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
       <div className="team">
@@ -141,56 +173,18 @@ const Teams = () => {
           </div>
         ) : (
           <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-            gap: '20px'
+            overflowY: 'scroll',
+            height: 'calc(100vh - 150px)'
           }}>
-          {
-            
-            teams?.data?.map((item: any, index: number) => <div
-           key={index}
-            className="user_item"
-            style={{
-              display: "flex",
-              justifyContent: 'space-between',
-              width: "100%",
-              maxWidth: "700px",
-            }}
-          >
-            {" "}
-            <div
-              className="team_add"
-              style={{
-                width: "100%",
-                borderRadius: "10px",
-                padding: "30px",
-                border: "1px solid #ed1c24",
-                fontSize: "28px",
-              }}
-            >
-              Имя команды:{" "}
-              <span
-                style={{
-                  fontWeight: "600",
-                }}
-              >
-                {" "}
-                {item?.name}
-              </span>
-              {item.members.length != 0 ? <div className='' style={{
-                 overflowY: 'scroll',
-                 height: '68vh',
-              }}>
-              {item?.members?.map((item: any, index: number) => (
-                <div key={index}><MemberItem item={item}/></div>
-              ))}
-              </div>: null}
-            </div>
-          </div>)
-          }
+
+            {
+              teams?.data?.map((item: any, index: any) => (
+                <TeamItem key={index} item={item} />
+              ))
+            }
+
           </div>
-          
+
         )}
 
         <div className="team_inner"></div>

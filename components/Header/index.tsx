@@ -9,8 +9,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { getProfile } from "@/redux/slices/profile";
+import { Item3 } from "./Item3";
+import { Item1 } from "./Item1";
+import { Item2 } from "./Item2";
 
-export const Header: any = () => {
+interface Props {
+  ver?: any
+}
+
+export const Header: any = ({ver}: Props) => {
   const pathname = usePathname();
   const dispatch = useDispatch<any>();
   const { profile } = useSelector((state: any) => state);
@@ -49,19 +56,19 @@ export const Header: any = () => {
               href="/projects"
               className={`header_nav_bar ${pathname === "/projects" && "hover"}`}
             >
-             Projects
+              Projects
             </Link>
             <Link
               href="/organizers"
               className={`header_nav_bar ${pathname === "/organizers" && "hover"}`}
             >
-             Organizers
+              Organizers
             </Link>
             <Link
               href="/partners"
               className={`header_nav_bar ${pathname === "/partners" && "hover"}`}
             >
-             Partners
+              Partners
             </Link>
             <div className="header_nav_bar">Contact</div>
           </div>
@@ -79,10 +86,10 @@ export const Header: any = () => {
               </Link>
             )}
             {(profile?.data && pathname === "/") ||
-            (profile?.data && pathname === "/about") ||
-            (profile?.data && pathname === "/projects") ||
-            (profile?.data && pathname === "/organizers") ||
-            (profile?.data && pathname === "/partners") ? (
+              (profile?.data && pathname === "/about") ||
+              (profile?.data && pathname === "/projects") ||
+              (profile?.data && pathname === "/organizers") ||
+              (profile?.data && pathname === "/partners") ? (
               <Link href="/mainlayout/team" className="header_nav_bar">
                 Панель
               </Link>
@@ -114,7 +121,8 @@ export const Header: any = () => {
                         alt=""
                       />
                     ) : null}{" "}
-                    {profile?.data?.first_name} {profile?.data?.last_name}
+                    <div className="header__info">{profile?.data?.first_name}</div>
+                    <div className="header__info">{profile?.data?.last_name}</div> 
                   </Link>
                 ) : null}
               </>
@@ -125,39 +133,9 @@ export const Header: any = () => {
                 <span></span>
               </label>
 
-              <ul className="menu__box">
-                <Link
-                  href="/"
-                  className={`menu__item ${pathname === "/" && "hover"}`}
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/about"
-                  className={`menu__item ${pathname === "/about" && "hover"}`}
-                >
-                  About us
-                </Link>
-                <Link
-                  href="/projects"
-                  className={`menu__item ${pathname === "/projects" && "hover"}`}
-                >
-                  Projects
-                </Link>
-                <Link
-                  href="/organizers"
-                  className={`menu__item ${pathname === "/organizers" && "hover"}`}
-                >
-                  Organizers
-                </Link>
-                <Link
-              href="/partners"
-              className={`menu__item ${pathname === "/partners" && "hover"}`}
-            >
-             Partners
-            </Link>
-                <div className="menu__item">Contact</div>
-              </ul>
+              {!ver ? <Item1/> : null}
+              {ver === 'team' ? <Item2/> : null}
+              {ver === 'admin' ? <Item3/> : null}
             </div>
           </div>
         </div>

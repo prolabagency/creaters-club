@@ -5,14 +5,14 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { useEffect } from "react";
-import { addUser, getUsers, removeUser } from "@/redux/slices/users";
+import { addMember, getMembers, removeMember } from "@/redux/slices/members";
 import Image from "next/image";
 import NoProfile from "../../../images/no-profile.jpeg";
 import { Modal } from "@/components/Modal";
 
 const AllMembers = () => {
   const dispatch = useDispatch<any>();
-  const { users } = useSelector((state: any) => state);
+  const { members } = useSelector((state: any) => state);
   const [modal, setModal] = useState(false);
   const [avatar, setAvatar] = useState<any>();
   const [avatarShow, setAvatarShow] = useState<any>();
@@ -25,7 +25,7 @@ const AllMembers = () => {
   } = useForm();
 
   useEffect(() => {
-    dispatch(getUsers());
+    dispatch(getMembers());
   }, []);
 
   const After = () => {
@@ -50,7 +50,7 @@ const AllMembers = () => {
 
   const userAdd = (data: any) => {
     dispatch(
-      addUser(
+      addMember(
         {
           username: data.username,
           first_name: data.first_name,
@@ -69,26 +69,21 @@ const AllMembers = () => {
   };
 
   const deleteUser = (id: number) => {
-    dispatch(removeUser(id))
+    dispatch(removeMember(id))
   }
 
-  console.log(users);
-  
 
   return (
     <>
       <div className="team">
         <div className="team_header">
           <div></div>
-          <button className="team_add" onClick={() => setModal(true)}>
-            Add User +
-          </button>
         </div>
         <div className="team_inner"></div>
       </div>
       <div className="users">
         <div className="users_inner">
-          {users?.data?.map((item: any, index: number) => (
+          {members?.data?.map((item: any, index: number) => (
             <div className="users_item" key={index}>
               <div className="users_item_item">
                 <Image
@@ -132,8 +127,7 @@ const AllMembers = () => {
                       gap: "5px",
                     }}
                   >
-                    <button onClick={() => deleteUser(item.id)}>remove</button>
-                    <button>edit</button>
+                    {/* <button>edit</button> */}
                   </div>
                 </div>
                 <div className="users_item_item">Email: {item.email}</div>
