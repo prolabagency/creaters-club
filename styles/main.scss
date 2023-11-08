@@ -1017,11 +1017,17 @@ button {
 }
 
 @media (max-width: 760px) {
-  .mycontact {
-    font-size: 36px;
-  }
+ 
   
 }
+
+
+@media (max-width: 640px) {
+  .mycontact {
+    font-size: 20px;
+  }
+}
+
 
 @media (max-width: 590px) {
   .mycontact {

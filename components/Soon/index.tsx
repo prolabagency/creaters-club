@@ -55,14 +55,22 @@ export const Soon = () => {
       className="event_title"
       style={{
         textAlign: "start",
-        padding: "31px 26px",
         width: "100%",
         display: "flex",
         alignItems: "center",
         gap: "15px",
       }}
     >
-      Soon: 7{" "}
+      <div style={{
+        textAlign: "start",
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        gap: "15px",
+        
+        padding: "31px 26px",
+      }}>
+         Soon: 7{" "}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="17"
@@ -77,6 +85,9 @@ export const Soon = () => {
           fill="#FDFDFD"
         />
       </svg>
+     
+      </div>
+     
       
     </div>
   </div>
