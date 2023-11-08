@@ -70,7 +70,12 @@ export const Header: any = ({ver}: Props) => {
             >
               Partners
             </Link>
-            <div className="header_nav_bar">Contact</div>
+            <Link
+              href="/contact"
+              className={`header_nav_bar ${pathname === "/contact" && "hover"}`}
+            >
+              Contact
+            </Link>
           </div>
 
           <div

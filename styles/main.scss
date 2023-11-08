@@ -312,6 +312,12 @@ img {
       background-attachment: fixed;
       height: calc(100vh - 30px);
     }
+    &.bg7 {
+      background: url(../images/backimg7.png) center no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      height: calc(100vh - 30px);
+    }
   }
 
   &_title {
@@ -985,14 +991,12 @@ button {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  paddingtop: 30px;
+  padding-top: 30px;
 }
 
 .mycontact {
   padding-top: 60px;
-
   color: #fff;
-
   font-size: 46px;
   font-style: normal;
   font-weight: 400;
@@ -1002,6 +1006,94 @@ button {
   text-align: end;
   width: 100%;
   padding-bottom: 46px;
+}
+
+.contact{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+  &_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 21px;
+  }
+
+  &_form{
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &_item{
+    input{
+      width: 100%;
+      height: 45px;
+      border: none;
+      background: #242424;
+      border-bottom:1px solid #c04248;
+      outline: none;
+      font-size: 18px;
+      color: white;
+
+      &::placeholder{
+      color: rgb(141, 141, 141);
+
+      }
+    }
+
+  }
+  
+  &_inner{
+    width: 100%;
+    max-width: 700px;
+    background: #242424;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &_title{
+    color: #FFF;
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+
+    span{
+      color: #c04248;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+  }
+
+  &_text{
+    color: #CECECE;
+
+text-align: center;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 160.5%;
+
+margin: 0 auto;
+max-width: 600px;
+    width: 100%;
+  }
 }
 
 @media (max-width: 1070px) {
@@ -1056,6 +1148,12 @@ button {
 
 
 @media (max-width: 440px) {
+  .contact_title{
+    font-size: 33px;
+  }
+  .contact_text{
+    font-size: 12px;
+  }
   .mycontact {
     font-size: 20px;
   }

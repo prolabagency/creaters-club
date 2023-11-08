@@ -37,8 +37,12 @@ export const Item1 = () => {
             >
                 Partners
             </Link>
-
-            <div className="menu__item">Contact</div>
+            <Link
+              href="/contact"
+              className={`menu__item ${pathname === "/contact" && "hover"}`}
+            >
+              Contact
+            </Link>
         </ul>
     )
 }
