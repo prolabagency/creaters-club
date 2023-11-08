@@ -312,12 +312,7 @@ img {
       background-attachment: fixed;
       height: calc(100vh - 30px);
     }
-    &.bg7 {
-      background: url(../images/backimg7.png) center no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
-      height: calc(100vh - 30px);
-    }
+    
   }
 
   &_title {
@@ -403,6 +398,12 @@ img {
       border-radius: 10px;
     }
   }
+}
+.bg7 {
+  background: url(../images/backimg7.png) center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: calc(100vh - 30px);
 }
 
 .eventbg {
@@ -1122,6 +1123,12 @@ max-width: 600px;
 
 
 @media (max-width: 590px) {
+  .contact{
+    margin: 63px 0px;
+  }
+  .bg7{
+    height: fit-content;
+  }
   .mycontact {
     font-size: 26px;
   }
