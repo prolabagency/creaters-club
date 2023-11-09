@@ -446,10 +446,11 @@ img {
 }
 
 .partner_item {
-  width: 200px;
+  img{
+    width: 200px;
   height: 200px;
-  background-color: #fff;
   border-radius: 100px;
+  }
 }
 
 .mentor_item {

@@ -7,6 +7,9 @@ import Link from 'next/link'
 import { Soon } from "@/components/Soon";
 import { Mentors } from "@/components/Mentors";
 
+import Partner1 from '../images/partner2.jpg'
+import Partner2 from '../images/partner1.jpg'
+
 export default function Home() {
   return (
     <div className="landing">
@@ -133,8 +136,15 @@ export default function Home() {
               style={{ marginTop: "60px", alignItems: "start" }}
             >
               <div className="partner_items">
-                <div className="partner_item"></div>
-                <div className="partner_item"></div>
+                <div className="partner_item">
+                  <Image  src={Partner1}  alt=""/>
+                </div>
+                <div className="partner_item">
+                  <Image  src={Partner2}  alt=""/>
+                </div>
+                {/* <div className="partner_item">
+                  <Image  src={Partner2}  alt=""/>
+                </div> */}
               </div>
             </div>
           </div>

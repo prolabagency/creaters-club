@@ -8,6 +8,10 @@ import Man4 from "../../images/man4.png";
 import Image from "next/image";
 import Link from 'next/link'
 
+
+import Partner1 from '../../images/partner2.jpg'
+import Partner2 from '../../images/partner1.jpg'
+
 const Partners = () => {
 
   return (  
@@ -47,45 +51,16 @@ const Partners = () => {
             >
               <div className="partner_items">
                 <div className="mentor_item_second">
-                  <Image src={Man1} alt="" />
+                  <Image width={183} height={180} src={Partner1} style={{borderRadius: '10px'}} alt="" />
                   <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
+                    <div style={{padding: '10px'}}>Name Surnamde dsadsadsads dsadsadasds dsadsadsad sadsadsadsa ddsadsadsad sadsadsad sadsadsad sadsadasd sad sa dsa sa dsadsadsa</div>
                   </div>
                 </div>
                 <div className="mentor_item_second">
-                  <Image src={Man2} alt="" />
+                  <Image width={183} height={180} src={Partner2} style={{borderRadius: '10px'}} alt="" />
                   <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item_second">
-                  <Image src={Man3} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item_second">
-                  <Image src={Man4} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item_second">
-                  <Image src={Man2} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
-                  </div>
-                </div>
-                <div className="mentor_item_second">
-                  <Image src={Man3} alt="" />
-                  <div className='mentor_person'>
-                    <div>Name Surname</div>
-                    <div>Experience: 4 years</div>
+                  <div style={{padding: '10px'}}>Name Surnamde dsadsadsads dsadsadasds dsadsadsad sadsadsadsa ddsadsadsad sadsadsad sadsadsad sadsadasd sad sa dsa sa dsadsadsa</div>
+
                   </div>
                 </div>
               </div>
