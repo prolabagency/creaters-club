@@ -1,10 +1,10 @@
 "use client";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import Man1 from "../../images/man1.png";
-import Man2 from "../../images/man2.png";
-import Man3 from "../../images/man3.png";
-import Man4 from "../../images/man4.png";
+import Man1 from "../../images/man1.jpg";
+import Man2 from "../../images/man2.jpg";
+import Man3 from "../../images/man3.jpg";
+import Man4 from "../../images/man4.jpg";
 import Image from "next/image";
 import Link from 'next/link'
 

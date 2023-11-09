@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
 
-import Man1 from "../../images/man1.png";
-import Man2 from "../../images/man2.png";
-import Man3 from "../../images/man3.png";
-import Man4 from "../../images/man4.png";
+import Man1 from "../../images/man1.jpg";
+import Man2 from "../../images/man2.jpg";
+import Man3 from "../../images/man3.jpg";
+import Man4 from "../../images/man4.jpg";
 import NoPhoto from "../../images/no-profile.jpeg";
 
 export const Mentors = () => {
@@ -27,28 +27,28 @@ export const Mentors = () => {
             >
               <div className="partner_items">
                 <div className="mentor_item">
-                  <Image width={183} height={180} style={{borderRadius: '10px'}} src={Man1} alt="" />
+                  <Image width={183} height={255} style={{borderRadius: '10px'}} src={Man3} alt="" />
                   <div className='mentor_person'>
                     <div>Абдыкадыров Сыймык</div>
                     <div>Stack: Backend</div>
                   </div>
                 </div>
                 <div className="mentor_item">
-                  <Image width={183} height={180} style={{borderRadius: '10px'}} src={NoPhoto} alt="" />
+                  <Image width={183} height={255} style={{borderRadius: '10px'}} src={Man2} alt="" />
                   <div className='mentor_person'>
                     <div>Сыдыков Тариел</div>
                     <div>Stack: UX/UI Дизайн</div>
                   </div>
                 </div>
                 <div className="mentor_item">
-                  <Image width={183} height={180} style={{borderRadius: '10px'}} src={NoPhoto} alt="" />
+                  <Image width={183} height={255} style={{borderRadius: '10px'}} src={Man1} alt="" />
                   <div className='mentor_person'>
                     <div>Асаналиев Урмат</div>
                     <div>Stack: Android</div>
                   </div>
                 </div>
                 <div className="mentor_item">
-                  <Image width={183} height={180} style={{borderRadius: '10px'}} src={NoPhoto} alt="" />
+                  <Image width={183} height={255} style={{borderRadius: '10px'}} src={Man4} alt="" />
                   <div className='mentor_person'>
                     <div>Кенешбек уулу Актан</div>
                     <div>Stack: Frontend</div>
