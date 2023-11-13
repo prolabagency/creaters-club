@@ -147,7 +147,7 @@ const Teams = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              height: "calc(100vh - 150px)",
+              height: "100%",
             }}
           >
             {" "}
@@ -174,7 +174,7 @@ const Teams = () => {
         ) : (
           <div style={{
             overflowY: 'scroll',
-            height: 'calc(100vh - 150px)'
+            height: '100%'
           }}>
 
             {

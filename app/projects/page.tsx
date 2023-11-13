@@ -94,7 +94,7 @@ const Projects = () => {
       </div>
       <div className='main_inner'>
         <div className='container'>
-          <div className='mycontact'>Our contacts: +996 555 55 55 55</div>
+          <div className='mycontact'>Our contacts: +996(552)57-75-77</div>
           <div className='mylogo'><Link href='/'>
             <svg width="152" height="49" viewBox="0 0 152 49" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M65.64 0.739996L51.632 48H42.86L32.932 12.232L22.392 48L13.688 48.068L0.292 0.739996H8.52L18.312 39.228L28.92 0.739996H37.624L47.484 39.024L57.344 0.739996H65.64ZM79.7856 6.996V20.868H96.1056V27.192H79.7856V41.676H98.1456V48H72.0336V0.671997H98.1456V6.996H79.7856Z" fill="#FFF4F4" />

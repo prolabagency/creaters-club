@@ -443,6 +443,8 @@ img {
   flex-wrap: wrap;
   width: 100%;
   gap: 20px;
+
+  
 }
 
 .partner_item {
@@ -692,6 +694,10 @@ img {
 
   &_side_items {
     width: 100%;
+  }
+  &_content{
+    overflow-y: scroll;
+    height: 74vh;
   }
 
   &_side_item {

@@ -136,7 +136,7 @@ const Team = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              height: "calc(100vh - 150px)",
+              height: "100%",
             }}
           >
             {" "}
@@ -166,7 +166,7 @@ const Team = () => {
             style={{
               display: "flex",
               justifyContent: "center",
-              height: "calc(100vh - 150px)",
+              height: "100%",
             }}
           >
             {" "}
@@ -196,8 +196,6 @@ const Team = () => {
                   {teams?.data && teams?.data[0]?.name}
                 </span>
                 <div className="" style={{
-                  overflowY: 'scroll',
-                  height: '68vh',
                 }}>
                   {teams?.data && teams?.data[0]?.members?.map((item: any, index: number) => (
                     <div key={index}><MemberItem item={item} /></div>
@@ -210,6 +208,8 @@ const Team = () => {
                   alignItems: "center",
                   justifyContent: "end",
                   gap: "5px",
+                  marginTop: '20px'
+
                 }}
               >
                 <button>Remove team</button>

@@ -10,6 +10,8 @@ import { Mentors } from "@/components/Mentors";
 import Partner1 from '../images/partner2.jpg'
 import Partner2 from '../images/partner1.jpg'
 import Partner3 from '../images/partner3.jpeg'
+import Partner4 from '../images/partner4.png'
+import Partner5 from '../images/partner5.png'
 
 export default function Home() {
   return (
@@ -139,9 +141,7 @@ export default function Home() {
                 <div className="partner_item">
                   <Image src={Partner1} alt="" />
                 </div>
-                <div className="partner_item">
-                  <Image src={Partner2} alt="" />
-                </div>
+               
                 <div className="partner_item">
                   <div style={{
                     width: '200px',
@@ -157,6 +157,46 @@ export default function Home() {
                       height: '120px',
                       borderRadius: '0px'
                     }} src={Partner3} alt="" />
+                  </div>
+                </div>
+                <div className="partner_item">
+                  <div style={{
+                    width: '200px',
+                    height: '200px',
+                    background: '#F7F7F7',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderRadius: '100px'
+                  }}>
+                    <Image style={{
+                      width: '170px',
+                      height: '170px',
+                      borderRadius: '0px',
+                      objectFit: 'contain'
+                    }} src={Partner4} alt="" />
+                  </div>
+                </div>
+                <div className="partner_item">
+                  <Image src={Partner2} alt="" />
+                </div>
+                <div className="partner_item">
+                  <div style={{
+                    width: '200px',
+                    height: '200px',
+                    background: '#F7F7F7',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderRadius: '100px'
+                  }}>
+                    <Image style={{
+                      width: '170px',
+                      height: '170px',
+                      borderRadius: '0px',
+                      objectFit: 'contain'
+
+                    }} src={Partner5} alt="" />
                   </div>
                 </div>
               </div>
@@ -181,7 +221,7 @@ export default function Home() {
       </div>
       <div className='main_inner'>
         <div className='container'>
-          <div className='mycontact'>Our contacts: +996 555 55 55 55</div>
+          <div className='mycontact'>Our contacts: +996(552)57-75-77</div>
           <div className='mylogo'><Link href='/'>
             <svg width="152" height="49" viewBox="0 0 152 49" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M65.64 0.739996L51.632 48H42.86L32.932 12.232L22.392 48L13.688 48.068L0.292 0.739996H8.52L18.312 39.228L28.92 0.739996H37.624L47.484 39.024L57.344 0.739996H65.64ZM79.7856 6.996V20.868H96.1056V27.192H79.7856V41.676H98.1456V48H72.0336V0.671997H98.1456V6.996H79.7856Z" fill="#FFF4F4" />
