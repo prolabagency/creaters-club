@@ -12,10 +12,16 @@ import Partner2 from '../images/partner1.jpg'
 import Partner3 from '../images/partner3.jpeg'
 import Partner4 from '../images/partner4.png'
 import Partner5 from '../images/partner5.png'
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <div className="landing">
+    <div>
+      <Head>
+        <title>Wecreatorsapp</title>
+        <meta name="description" content="Your page description dsadsadadsa dsadsa dsadsa " />
+      </Head>
+      <div className="landing">
       <Header />
       <div className="main">
         <div className="main_inner bg">
@@ -232,5 +238,7 @@ export default function Home() {
       </div>
       {/* <Footer /> */}
     </div>
+    </div>
+    
   );
 }
