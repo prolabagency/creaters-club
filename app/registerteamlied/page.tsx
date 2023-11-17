@@ -37,6 +37,7 @@ const Register = () => {
                     {...register("username", { required: true })}
                     type="text"
                   />
+                  <div className="error">{profile?.error?.username}</div>
                   <div className="error">
                     {errors.username && "Это поле не может быть пустым."}
                   </div>
