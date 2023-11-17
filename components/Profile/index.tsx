@@ -83,11 +83,11 @@ const Profile = () => {
         <div>
           <div className="profile_item">
             <div>Email</div>
-            <input {...register('email', {required: true})} type="text" defaultValue={profile?.data?.email} />
+            <input {...register('email', {required: false})} type="text" defaultValue={profile?.data?.email} />
           </div>
           <div className="profile_item">
             <div>Phone</div>
-            <input {...register('phone', {required: true})} type="text" defaultValue={profile?.data?.phone} />
+            <input {...register('phone', {required: false})} type="text" defaultValue={profile?.data?.phone} />
           </div>
         </div>
       </div>

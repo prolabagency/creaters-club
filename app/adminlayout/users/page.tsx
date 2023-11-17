@@ -86,7 +86,9 @@ const Users = () => {
         </div>
         <div className="team_inner"></div>
       </div>
-      <div className="users">
+      <div className="" style={{
+        marginTop: '30px'
+      }}>
         <div className="users_inner">
           {users?.data?.map((item: any, index: number) => (
             <div className="users_item" key={index}>

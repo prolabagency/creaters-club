@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const Soon = () => {
+export const Soon = ({start, end, place, title, name}: any) => {
     const [open, setOpen] = useState(false)
   return (
     <div
@@ -15,7 +15,7 @@ export const Soon = () => {
             paddingTop: '26px',
             textAlign: 'center'
           }}>
-          <div className="event_title">Name</div>
+          <div className="event_title">{name}</div>
         <div
           className="event_both"
           style={{
@@ -28,7 +28,7 @@ export const Soon = () => {
               textAlign: "start",
             }}
           >
-            Start: Novevber 11
+            Start: {start}
           </div>
           <div
             style={{
@@ -36,7 +36,7 @@ export const Soon = () => {
               textAlign: "start",
             }}
           >
-            Place: adssadsdsa
+            Place: {place}
           </div>
         </div>
         <div
@@ -47,7 +47,7 @@ export const Soon = () => {
             borderBottom: "1px solid #F3F3F3",
           }}
         >
-          End: Novevber 12
+          End: {end}
         </div>
           </div>: null
     }
@@ -70,7 +70,7 @@ export const Soon = () => {
         
         padding: "31px 26px",
       }}>
-         Soon: 7{" "}
+         Soon: {title}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="17"

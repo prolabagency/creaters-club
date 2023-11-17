@@ -81,7 +81,7 @@ const AllMembers = () => {
         </div>
         <div className="team_inner"></div>
       </div>
-      <div className="users">
+      <div className="">
         <div className="users_inner">
           {members?.data?.map((item: any, index: number) => (
             <div className="users_item" key={index}>

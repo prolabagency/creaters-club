@@ -108,11 +108,7 @@ export default function Home() {
                   <div
                     className='soon'
                   >
-                    <Soon />
-                    <Soon />
-                    <Soon />
-                    <Soon />
-                    <Soon />
+                    <Soon start={'November 18'} end={'November 19'} title={'1'} name={'Хакатон 1'} place={'ОшТУ главный корпус'}/>
                   </div>
                 </div>
               </div>
@@ -186,7 +182,7 @@ export default function Home() {
                 <div className="partner_item">
                   <Image src={Partner2} alt="" />
                 </div>
-                <div className="partner_item">
+                {/* <div className="partner_item">
                   <div style={{
                     width: '200px',
                     height: '200px',
@@ -204,7 +200,7 @@ export default function Home() {
 
                     }} src={Partner5} alt="" />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

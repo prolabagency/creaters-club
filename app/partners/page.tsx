@@ -17,7 +17,7 @@ import Partner5 from '../../images/partner5.png'
 
 const Partners = () => {
 
-  return (  
+  return (
     <div className="landing">
       <Header />
       <div className="main">
@@ -53,17 +53,19 @@ const Partners = () => {
               style={{ marginTop: "60px", alignItems: "start" }}
             >
               <div className="partner_items">
-                <div className="mentor_item_second">
-                  <Image width={183} height={180} src={Partner1} style={{borderRadius: '10px'}} alt="" />
+                <div className="partner_item_second">
+                  <Image width={183} height={180} src={Partner1} style={{ borderRadius: '10px' }} alt="" />
                   <div className='mentor_person' style={{
-                    width: '63%',
+                    // width: '63%',
                     textAlign: 'start',
+                    paddingTop: '0px',
+
                   }}>
-                    <div style={{padding: '10px'}}>Name Surnamde dsadsadsads dsadsadasds dsadsadsad sadsadsadsa ddsadsadsad sadsadsad sadsadsad sadsadasd sad sa dsa sa dsadsadsa</div>
+                    <div style={{ padding: '20px' }}>PROlab Agency  is an IT company specializing in providing a wide range of services, including web design, custom development, and e-commerce solutions tailored to meet the unique needs of clients. Comprising an experienced team of developers, designers, and project managers, we leverage the latest tools and technologies to create beautiful and functional websites.</div>
                   </div>
                 </div>
-                <div className="mentor_item_second">
-                <div style={{
+                <div className="partner_item_second">
+                  <div style={{
                     width: '183px',
                     height: '180px',
                     background: '#F7F7F7',
@@ -73,22 +75,24 @@ const Partners = () => {
                     borderRadius: '10px'
                   }}>
                     <Image style={{
-                      width: '160px',
+                      width: '180px',
+
                       height: '160px',
                       borderRadius: '0px',
                       objectFit: 'contain'
 
                     }} src={Partner3} alt="" />
                   </div>                   <div className='mentor_person' style={{
-                    width: '63%',
+                    // width: '63%',
                     textAlign: 'start',
+                    paddingTop: '0px',
                   }}>
-                  <div style={{padding: '10px'}}>Name Surnamde dsadsadsads dsadsadasds dsadsadsad sadsadsadsa ddsadsadsad sadsadsad sadsadsad sadsadasd sad sa dsa sa dsadsadsa</div>
+                    <div style={{ padding: '20px' }}>Our partnersGeeks IT School is one of the largest IT schools in Kyrgyzstan. Founded in 2018, over the course of 5 years, our courses have graduated over 1000 students, many of whom are now employed in over 50 IT companies both within Kyrgyzstan and internationally. Currently, we have over 1000 students enrolled in courses such as Mobile Development, Website Creation, Database Development, and UX/UI Design.</div>
 
                   </div>
                 </div>
-                
-                <div className="mentor_item_second">
+
+                {/* <div className="partner_item_second">
                 <div style={{
                     width: '183px',
                     height: '180px',
@@ -113,20 +117,22 @@ const Partners = () => {
                   <div style={{padding: '10px'}}>Name Surnamde dsadsadsads dsadsadasds dsadsadsad sadsadsadsa ddsadsadsad sadsadsad sadsadsad sadsadasd sad sa dsa sa dsadsadsa</div>
 
                   </div>
-                </div>
-                <div className="mentor_item_second">
-                  <Image width={183} height={180} src={Partner2} style={{borderRadius: '10px'}} alt="" />
+                </div> */}
+                <div className="partner_item_second">
+                  <Image width={183} height={180} src={Partner2} style={{ borderRadius: '10px' }} alt="" />
                   <div className='mentor_person' style={{
-                    width: '63%',
+                    // width: '63%',
                     textAlign: 'start',
+                    paddingTop: '0px',
+
                   }}>
-                  <div style={{padding: '10px'}}>Name Surnamde dsadsadsads dsadsadasds dsadsadsad sadsadsadsa ddsadsadsad sadsadsad sadsadsad sadsadasd sad sa dsa sa dsadsadsa</div>
+                    <div style={{ padding: '20px' }}>PROlab Media is a marketing agency specializing in business promotion. It provides the services of a marketer, mobile photographer, and SMM specialist. At PROlab Media, we help boost sales through Instagram by creating individualized marketing strategies.</div>
 
                   </div>
                 </div>
-                
-                <div className="mentor_item_second">
-                <div style={{
+
+                <div className="partner_item_second">
+                  <div style={{
                     width: '183px',
                     height: '180px',
                     background: '#F7F7F7',
@@ -136,17 +142,20 @@ const Partners = () => {
                     borderRadius: '10px'
                   }}>
                     <Image style={{
-                      width: '160px',
+                      width: '180px',
                       height: '160px',
                       borderRadius: '0px',
                       objectFit: 'contain'
 
                     }} src={Partner4} alt="" />
                   </div>                   <div className='mentor_person' style={{
-                    width: '63%',
+                    // width: '63%',
                     textAlign: 'start',
+                    paddingTop: '0px',
+
                   }}>
-                  <div style={{padding: '10px'}}>Name Surnamde dsadsadsads dsadsadasds dsadsadsad sadsadsadsa ddsadsadsad sadsadsad sadsadsad sadsadasd sad sa dsa sa dsadsadsa</div>
+                    <div style={{ padding: '20px' }}>The Red Crescent of Kyrgyzstan is a humanitarian organization operating in all regions of the country, providing assistance to the population in various sectors. The Kyrgyz Red Crescent has 7 regional, 1 city, and 38 district branches, making it the oldest humanitarian organization in the country.
+                      About the partner: Red Crescent</div>
 
                   </div>
                 </div>
