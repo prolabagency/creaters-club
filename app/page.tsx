@@ -28,7 +28,7 @@ export default function Home() {
           <div className="container">
             <div className="main_left">
               <div className="main_title">WELCOME to the</div>
-              <div className="main_text" style={{ color: "#ED1C24" }}>
+              <div className="main_text" style={{ color: "white" }}>
                 WEC hackathon
               </div>
               <Link href='/login' className="main_btn">
@@ -60,15 +60,7 @@ export default function Home() {
               <div className="main_right">
                 <div className="main_right_img">
                   <div className="main_left_text">
-                    WEC Hackathon is the first hackathon for scholars in Osh.
-                    During two days you will code, brainstorm and create real
-                    projects to demonstrate your skill. During two days you will
-                    code, brainstorm and create real projects to demonstrate
-                    your skill. WEC Hackathon is the first hackathon for
-                    scholars in Osh. During two days you will code, brainstorm
-                    and create real projects to demonstrate your skill. During
-                    two days you will code, brainstorm and create real projects
-                    to demonstrate your skill.
+                  The WeCreaters Hackathon is a dynamic two-day event that provides high school students with the opportunity to demonstrate their skills, gain valuable experience, and collaborate with other teams. Participants will work on interesting projects, network with industry professionals, and showcase their abilities to potential employers. Join us for an exciting journey of innovation, learning, and growth at the WECreaters Hackathon.
                   </div>
                 </div>
               </div>

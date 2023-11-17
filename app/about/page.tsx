@@ -46,8 +46,7 @@ const Aboute = () => {
                     marginTop: '80px'
                 }}>
                   <div className="main_left_text">
-                  WEC Hackathon is the first hackathon for scholars in Osh. During two days you will code, brainstorm and create real projects to demonstrate your skill.  During two days you will code, brainstorm and create real projects to demonstrate your skill. WEC Hackathon is the first hackathon for scholars in Osh. During two days you will code, brainstorm and create real projects to demonstrate your skill.  During two days you will code, brainstorm and create real projects to demonstrate your skill. 
-                  </div>
+                  WeCreaters is a community of high school students who love to create and learn. We offer them various opportunities to showcase their talents and passions in different fields, such as science, technology, arts, and more. We also connect them with mentors and experts who can help them grow and explore their career paths. WeCreaters is a place where young creators can discover their potential, express their ideas, and make a positive impact on the world.                  </div>
                 </div>
               </div>
             </div>

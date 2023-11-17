@@ -25,6 +25,12 @@ export const Item1 = () => {
             >
                 Projects
             </Link>
+            <Link
+                href="/teamlids"
+                className={`menu__item ${pathname === "/teamlids" && "hover"}`}
+            >
+                Teams
+            </Link>
             {/* <Link
                 href="/organizers"
                 className={`menu__item ${pathname === "/organizers" && "hover"}`}

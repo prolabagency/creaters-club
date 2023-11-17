@@ -62,7 +62,7 @@ export const Header: any = ({ver}: Props) => {
               href="/teamlids"
               className={`header_nav_bar ${pathname === "/teamlids" && "hover"}`}
             >
-              Teamlids
+              Teams
             </Link>
             {/* <Link
               href="/organizers"
