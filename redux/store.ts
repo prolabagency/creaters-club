@@ -5,6 +5,7 @@ import cities from '../redux/slices/cities'
 import teams from '../redux/slices/teams'
 import users from "./slices/users";
 import members from "./slices/members";
+import projects from "./slices/projects";
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
     teams,
     users,
     members,
+    projects,
   },
 });
 

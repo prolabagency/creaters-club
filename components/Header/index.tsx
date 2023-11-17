@@ -58,6 +58,12 @@ export const Header: any = ({ver}: Props) => {
             >
               Projects
             </Link>
+            <Link
+              href="/teamlids"
+              className={`header_nav_bar ${pathname === "/teamlids" && "hover"}`}
+            >
+              Teamlids
+            </Link>
             {/* <Link
               href="/organizers"
               className={`header_nav_bar ${pathname === "/organizers" && "hover"}`}
@@ -93,7 +99,8 @@ export const Header: any = ({ver}: Props) => {
             {(profile?.data && pathname === "/") ||
               (profile?.data && pathname === "/about") ||
               (profile?.data && pathname === "/projects") ||
-              // (profile?.data && pathname === "/organizers") ||
+              (profile?.data && pathname === "/teamlids") ||
+              (profile?.data && pathname === "/contact") ||
               (profile?.data && pathname === "/partners") ? (
               <Link href={localStorage.getItem('admin') === 'true' ? "/adminlayout/teams" : "/mainlayout/team"} className="header_nav_bar">
                 Панель

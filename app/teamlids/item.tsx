@@ -3,7 +3,7 @@ import { addTeam, getTeams } from "@/redux/slices/teams";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import NoProfile from "../../../images/no-profile.jpeg";
+import NoProfile from "../../images/no-profile.jpeg";
 import Image from "next/image";
 
 export const MemberItem = ({ item }: any) => {
@@ -41,13 +41,7 @@ export const MemberItem = ({ item }: any) => {
         key={item?.id}
       >
         <div
-          style={{
-            padding: "30px",
-            alignItems: "center",
-            gap: "20px",
-            width: "100%",
-            display: "flex",
-          }}
+        className="mem"
         >
           <div className="users_item_item">
             <Image
@@ -71,8 +65,10 @@ export const MemberItem = ({ item }: any) => {
                 alignItems: "center",
                 justifyContent: "space-between",
                 gap: "5px",
+                color: 'white',
+                marginBottom: '10px'
               }}
-              className="users_item_bold"
+              className="users_item_item"
             >
               <div
                 style={{

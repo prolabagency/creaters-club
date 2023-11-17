@@ -132,9 +132,6 @@ const AllMembers = () => {
                 </div>
                 <div className="users_item_item">Email: {item.email}</div>
                 <div className="users_item_item">Stack: {item.stack}</div>
-                <div className="users_item_item">
-                  Status: {item.is_active ? "active" : "disactive"}
-                </div>
               </div>
             </div>
           ))}

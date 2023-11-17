@@ -81,7 +81,7 @@ const Users = () => {
         <div className="team_header">
           <div></div>
           <button className="team_add" onClick={() => setModal(true)}>
-            Add User +
+            Add Lid +
           </button>
         </div>
         <div className="team_inner"></div>

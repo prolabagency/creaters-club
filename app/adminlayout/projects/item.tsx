@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import NoProfile from "../../../images/no-profile.jpeg";
 import Image from "next/image";
 
-export const MemberItem = ({ item }: any) => {
+export const ProjectItem = ({ item }: any) => {
   const {
     register,
     handleSubmit,
@@ -18,11 +18,11 @@ export const MemberItem = ({ item }: any) => {
 
   useEffect(() => {
     reset({
-        name: item.name,
-        username:item.username,
-        last_name: item.last_name,
-        email: item.email,
-        stack: item.stack,
+        name: item?.name,
+        username:item?.username,
+        last_name: item?.last_name,
+        email: item?.email,
+        stack: item?.stack,
     })
   }, [])
 
@@ -82,8 +82,8 @@ export const MemberItem = ({ item }: any) => {
                   gap: "5px",
                 }}
               >
-                <div className="users_item_item">{item.first_name}</div>
-                <div className="users_item_item">{item.last_name}</div>
+                <div className="users_item_item">{item?.first_name}</div>
+                <div className="users_item_item">{item?.last_name}</div>
               </div>
               <div
                 style={{
@@ -94,9 +94,11 @@ export const MemberItem = ({ item }: any) => {
               >
               </div>
             </div>
-            <div className="users_item_item">Email: {item.email}</div>
-            <div className="users_item_item">Stack: {item.stack}</div>
-            
+            <div className="users_item_item">Email: {item?.email}</div>
+            <div className="users_item_item">Stack: {item?.stack}</div>
+            <div className="users_item_item">
+              Status: {item?.is_active ? "active" : "disactive"}
+            </div>
           </div>
         </div>
         

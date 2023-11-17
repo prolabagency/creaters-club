@@ -25,11 +25,11 @@ const Login = () => {
       <div className="login_inner">
         <div className="login_content">
           <div>
-            <div className="login_item_title">Логин</div>
+            <div className="login_item_title">Login</div>
             <div className="login_inputs">
               <div>
                 <div className="login_item">
-                  <label htmlFor="">Пользователь</label>
+                  <label htmlFor="">Username</label>
                   <input
                     {...register("login", { required: true })}
                     type="text"
@@ -40,7 +40,7 @@ const Login = () => {
                   <div className="error">{profile?.error?.login}</div>
                 </div>
                 <div className="register_item">
-                  <label htmlFor="">Пароль</label>
+                  <label htmlFor="">Password</label>
                   <input
                     {...register("password", { required: true })}
                     type="password"
@@ -56,7 +56,7 @@ const Login = () => {
           </div>
           <div style={{ textAlign: "end", color: "black" }}>
             <button onClick={handleSubmit(onSubmit)} type="submit">
-              Войти
+              Sign in
             </button>
           </div>
         </div>

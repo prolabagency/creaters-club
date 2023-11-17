@@ -47,7 +47,7 @@ export default function AdminlayoutPage({
               className={`admin_side_item ${pathname === "/adminlayout/users" ? "active" : null
                 }`}
             >
-              Users
+              Lids
             </Link>
             <Link
               href={"/adminlayout/profile"}

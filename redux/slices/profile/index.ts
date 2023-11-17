@@ -64,7 +64,6 @@ export const RegisterProfile = (data: any) => {
         }
       })
       .then((response) => {
-        alert('Вы успешно зарегистрировались')
           window.location.replace('/login')
       })
       .catch((error) => {
@@ -93,11 +92,11 @@ export const LoginProfile = (data: any) => {
             }
           })
           .catch((error) => {
-              dispatch(setError(error.response));
+              dispatch(setError(error?.response?.data));
           })
       })
       .catch((error) => {
-          dispatch(setError(error.response));
+          dispatch(setError(error?.response?.data));
       })
   }
 }

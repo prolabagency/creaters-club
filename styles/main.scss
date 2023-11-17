@@ -487,21 +487,30 @@ img {
 }
 
 .footer {
-  height: 300px;
   width: 100%;
   background: #242424;
-  margin-top: 130px;
+
+  &_text{
+    display: flex;
+    justify-content: end;
+    padding: 0px 0px 20px 20px;
+    color: white;
+    gap: 10px;
+  }
 
   &_inner {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px 0px;
   }
 
   &_right {
     display: flex;
-    padding-top: 30px;
     gap: 50px;
+    flex-wrap: wrap;
     color: #fff;
   }
 
@@ -511,12 +520,11 @@ img {
     gap: 6px;
 
     div {
-      border-bottom: 1px solid;
+      // border-bottom: 1px solid;
       width: fit-content;
       cursor: pointer;
 
       &:hover {
-        color: #c04248;
         transition: 0.3s;
       }
     }
@@ -1110,8 +1118,24 @@ max-width: 600px;
     width: 100%;
   }
 }
+.mem{
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
 
 @media (max-width: 1070px) {
+  .team_add{
+    .span_name{
+      font-size: 20px;
+      font-weight: 300;
+      span{
+        font-weight: 300;
+      }
+    }
+  }
   .forms {
     display: flex;
     flex-direction: column;
@@ -1123,15 +1147,34 @@ max-width: 600px;
   }
 }
 
+@media (max-width: 834px) {
+  .footer_right{
+    margin-top: 20px;
+  }
+}
+
 @media (max-width: 760px) {
- 
-  
+  .footer_right{
+    gap: 25px;
+  }
+  .users_item{
+    border: none;
+    border-bottom: 1px solid #ed1c24;
+    border-radius: 0px;
+  }
 }
 
 
 @media (max-width: 640px) {
   .mycontact {
     font-size: 20px;
+  }
+  .mem{
+    padding: 0px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
@@ -1180,6 +1223,13 @@ max-width: 600px;
     font-size: 20px;
   }
 }
+@media (max-width: 1000px) {
+  .users_item_item{
+    font-size: 20px;
+  }
+}
+
+
 
 @media (max-width: 730px) {
   .partner_item_second{
@@ -1187,6 +1237,9 @@ max-width: 600px;
     align-items: center;
     padding-top: 20px;
     justify-content: center;
+  }
+  .users_item_item{
+    font-size: 15px;
   }
 }
 @media (max-width: 400px) {
@@ -1201,6 +1254,7 @@ max-width: 600px;
   }
   
 }
+
 
 @media (max-width: 1200px) {
   .admin_left{
