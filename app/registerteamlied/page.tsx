@@ -71,7 +71,7 @@ const Register = () => {
                   <div className="error">
                     {errors.first_name && "Это поле не может быть пустым."}
                   </div>
-                  <div className="error">{profile?.error?.password}</div>
+                  <div className="error">{profile?.error?.first_name}</div>
                 </div>
                 <div className="register_item">
                   <label htmlFor="">Last name</label>
@@ -81,7 +81,7 @@ const Register = () => {
                   <div className="error">
                     {errors.last_name && "Это поле не может быть пустым."}
                   </div>
-                  <div className="error">{profile?.error?.password}</div>
+                  <div className="error">{profile?.error?.last_name}</div>
                 </div>
                 <div className="register_item">
                   <label htmlFor="">Email</label>
@@ -95,7 +95,8 @@ const Register = () => {
                   <div className="error">
                     {errors.email && "Это поле не может быть пустым."}
                   </div>
-                  <div className="error">{profile?.error?.password}</div>
+                  <div style={{color: 'red'}}>{errors?.email && `${errors?.email.message}`}</div>
+                  <div className="error">{profile?.error?.email}</div>
                 </div>
                 <div className="error">{profile?.error?.detail}</div>
               </div>
