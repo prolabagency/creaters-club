@@ -50,7 +50,7 @@ const Register = () => {
                   />
                   <div className="error">
                     {errors.password && "Это поле не может быть пустым."}
-                  </div>
+                  </div>  
                   <div className="error">{profile?.error?.password}</div>
                 </div>
                 <div className="register_item">

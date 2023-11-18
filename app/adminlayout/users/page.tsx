@@ -9,10 +9,11 @@ import { addUser, getUsers, removeUser } from "@/redux/slices/users";
 import Image from "next/image";
 import NoProfile from "../../../images/no-profile.jpeg";
 import { Modal } from "@/components/Modal";
+import { getProfile } from "@/redux/slices/profile";
 
 const Users = () => {
   const dispatch = useDispatch<any>();
-  const { users } = useSelector((state: any) => state);
+  const { users, profile } = useSelector((state: any) => state);
   const [modal, setModal] = useState(false);
   const [avatar, setAvatar] = useState<any>();
   const [avatarShow, setAvatarShow] = useState<any>();
@@ -26,6 +27,7 @@ const Users = () => {
 
   useEffect(() => {
     dispatch(getUsers());
+    dispatch(getProfile());
   }, []);
 
   const After = () => {
@@ -90,7 +92,7 @@ const Users = () => {
         marginTop: '30px'
       }}>
         <div className="users_inner">
-          {users?.data?.map((item: any, index: number) => (
+          {users?.data?.filter((item: any) => item.id !== profile?.data?.id)?.map((item: any, index: number) => (
             <div className="users_item" key={index}>
               <div className="users_item_item">
                 <Image
